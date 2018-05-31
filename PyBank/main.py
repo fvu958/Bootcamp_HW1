@@ -12,7 +12,7 @@ import os
 
 
 budget_CSV = os.path.join("budget_data_1.csv")
-output = "budget_analysis_1.txt"
+file_output = "budget_analysis_1.txt"
 
 
 # In[3]:
@@ -77,6 +77,6 @@ print(analysis)
 # In[11]:
 
 
-datafile = open(output, "w")
-datafile.write(output)
+datafile = open(file_output, "w")
+datafile.write(analysis)
 
