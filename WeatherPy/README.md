@@ -100,7 +100,7 @@ while len(df) < sample:
     
     base_url = 'http://api.openweathermap.org/data/2.5/weather?q='
 
-    url = base_url + name + ',' + country_code + '&units=' + units + '&APPID=' + api_key
+    url = base_url + name.replace(' ','_') + ',' + country_code + '&units=' + units + '&APPID=' + api_key
     weather_response = requests.get(url)
     weather_data = weather_response.json()
     
@@ -133,1191 +133,1147 @@ while len(df) < sample:
         pass
 ```
 
-    City: Atar. http://api.openweathermap.org/data/2.5/weather?q=atar,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Isabel do Rio Negro. http://api.openweathermap.org/data/2.5/weather?q=santa isabel do rio negro,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Galle. http://api.openweathermap.org/data/2.5/weather?q=galle,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Guadalajara. http://api.openweathermap.org/data/2.5/weather?q=guadalajara,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Agadez. http://api.openweathermap.org/data/2.5/weather?q=agadez,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pisco. http://api.openweathermap.org/data/2.5/weather?q=pisco,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Colombo. http://api.openweathermap.org/data/2.5/weather?q=colombo,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kikwit. http://api.openweathermap.org/data/2.5/weather?q=kikwit,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bilma. http://api.openweathermap.org/data/2.5/weather?q=bilma,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cadillac. http://api.openweathermap.org/data/2.5/weather?q=cadillac,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dalbandin. http://api.openweathermap.org/data/2.5/weather?q=dalbandin,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ibra. http://api.openweathermap.org/data/2.5/weather?q=ibra,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taft. http://api.openweathermap.org/data/2.5/weather?q=taft,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Leh. http://api.openweathermap.org/data/2.5/weather?q=leh,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Itarema. http://api.openweathermap.org/data/2.5/weather?q=itarema,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Korla. http://api.openweathermap.org/data/2.5/weather?q=korla,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Leamington. http://api.openweathermap.org/data/2.5/weather?q=leamington,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Maldonado. http://api.openweathermap.org/data/2.5/weather?q=maldonado,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Gravdal. http://api.openweathermap.org/data/2.5/weather?q=gravdal,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Margate. http://api.openweathermap.org/data/2.5/weather?q=margate,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Aguimes. http://api.openweathermap.org/data/2.5/weather?q=aguimes,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Thompson. http://api.openweathermap.org/data/2.5/weather?q=thompson,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mantua. http://api.openweathermap.org/data/2.5/weather?q=mantua,cu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Minas. http://api.openweathermap.org/data/2.5/weather?q=minas,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mapiripan. http://api.openweathermap.org/data/2.5/weather?q=mapiripan,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tamiami. http://api.openweathermap.org/data/2.5/weather?q=tamiami,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aligudarz. http://api.openweathermap.org/data/2.5/weather?q=aligudarz,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Komsomolets. http://api.openweathermap.org/data/2.5/weather?q=komsomolets,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vardo. http://api.openweathermap.org/data/2.5/weather?q=vardo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ambilobe. http://api.openweathermap.org/data/2.5/weather?q=ambilobe,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lunino. http://api.openweathermap.org/data/2.5/weather?q=lunino,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ancud. http://api.openweathermap.org/data/2.5/weather?q=ancud,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lotoshino. http://api.openweathermap.org/data/2.5/weather?q=lotoshino,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iquitos. http://api.openweathermap.org/data/2.5/weather?q=iquitos,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qasigiannguit. http://api.openweathermap.org/data/2.5/weather?q=qasigiannguit,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Paita. http://api.openweathermap.org/data/2.5/weather?q=paita,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lovozero. http://api.openweathermap.org/data/2.5/weather?q=lovozero,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Camocim. http://api.openweathermap.org/data/2.5/weather?q=camocim,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gombe. http://api.openweathermap.org/data/2.5/weather?q=gombe,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dingle. http://api.openweathermap.org/data/2.5/weather?q=dingle,ie&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salinopolis. http://api.openweathermap.org/data/2.5/weather?q=salinopolis,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tripoli. http://api.openweathermap.org/data/2.5/weather?q=tripoli,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Filingue. http://api.openweathermap.org/data/2.5/weather?q=filingue,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Forestville. http://api.openweathermap.org/data/2.5/weather?q=forestville,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Atbasar. http://api.openweathermap.org/data/2.5/weather?q=atbasar,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sinnamary. http://api.openweathermap.org/data/2.5/weather?q=sinnamary,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Marawi. http://api.openweathermap.org/data/2.5/weather?q=marawi,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Karcag. http://api.openweathermap.org/data/2.5/weather?q=karcag,hu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kulhudhuffushi. http://api.openweathermap.org/data/2.5/weather?q=kulhudhuffushi,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Joseph. http://api.openweathermap.org/data/2.5/weather?q=saint-joseph,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Portree. http://api.openweathermap.org/data/2.5/weather?q=portree,gb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilhabela. http://api.openweathermap.org/data/2.5/weather?q=ilhabela,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Soligalich. http://api.openweathermap.org/data/2.5/weather?q=soligalich,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kolobrzeg. http://api.openweathermap.org/data/2.5/weather?q=kolobrzeg,pl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sabratah. http://api.openweathermap.org/data/2.5/weather?q=sabratah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Volovo. http://api.openweathermap.org/data/2.5/weather?q=volovo,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kalmunai. http://api.openweathermap.org/data/2.5/weather?q=kalmunai,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kodino. http://api.openweathermap.org/data/2.5/weather?q=kodino,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Najran. http://api.openweathermap.org/data/2.5/weather?q=najran,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mokrous. http://api.openweathermap.org/data/2.5/weather?q=mokrous,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dalvik. http://api.openweathermap.org/data/2.5/weather?q=dalvik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Narva-Joesuu. http://api.openweathermap.org/data/2.5/weather?q=narva-joesuu,ee&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Piacabucu. http://api.openweathermap.org/data/2.5/weather?q=piacabucu,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Takoradi. http://api.openweathermap.org/data/2.5/weather?q=takoradi,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Wagar. http://api.openweathermap.org/data/2.5/weather?q=wagar,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Garissa. http://api.openweathermap.org/data/2.5/weather?q=garissa,ke&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Druskininkai. http://api.openweathermap.org/data/2.5/weather?q=druskininkai,lt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iracoubo. http://api.openweathermap.org/data/2.5/weather?q=iracoubo,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: The Valley. http://api.openweathermap.org/data/2.5/weather?q=the valley,ai&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Cruz. http://api.openweathermap.org/data/2.5/weather?q=santa cruz,cr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Cruz Cabralia. http://api.openweathermap.org/data/2.5/weather?q=santa cruz cabralia,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Niles. http://api.openweathermap.org/data/2.5/weather?q=niles,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Joao da Barra. http://api.openweathermap.org/data/2.5/weather?q=sao joao da barra,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Turayf. http://api.openweathermap.org/data/2.5/weather?q=turayf,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Cristobal. http://api.openweathermap.org/data/2.5/weather?q=san cristobal,ec&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Camacha. http://api.openweathermap.org/data/2.5/weather?q=camacha,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Somerset. http://api.openweathermap.org/data/2.5/weather?q=somerset,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Paamiut. http://api.openweathermap.org/data/2.5/weather?q=paamiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taoudenni. http://api.openweathermap.org/data/2.5/weather?q=taoudenni,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pangnirtung. http://api.openweathermap.org/data/2.5/weather?q=pangnirtung,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Berlevag. http://api.openweathermap.org/data/2.5/weather?q=berlevag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vallenar. http://api.openweathermap.org/data/2.5/weather?q=vallenar,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pisco. http://api.openweathermap.org/data/2.5/weather?q=pisco,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Uyovu. http://api.openweathermap.org/data/2.5/weather?q=uyovu,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yining. http://api.openweathermap.org/data/2.5/weather?q=yining,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Coquimbo. http://api.openweathermap.org/data/2.5/weather?q=coquimbo,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hamina. http://api.openweathermap.org/data/2.5/weather?q=hamina,fi&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Doha. http://api.openweathermap.org/data/2.5/weather?q=doha,qa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sisimiut. http://api.openweathermap.org/data/2.5/weather?q=sisimiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ainazi. http://api.openweathermap.org/data/2.5/weather?q=ainazi,lv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yabrud. http://api.openweathermap.org/data/2.5/weather?q=yabrud,sy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Constitucion. http://api.openweathermap.org/data/2.5/weather?q=constitucion,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taoudenni. http://api.openweathermap.org/data/2.5/weather?q=taoudenni,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Notre-Dame-du-Lac. http://api.openweathermap.org/data/2.5/weather?q=notre-dame-du-lac,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bani. http://api.openweathermap.org/data/2.5/weather?q=bani,do&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ginir. http://api.openweathermap.org/data/2.5/weather?q=ginir,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Huancavelica. http://api.openweathermap.org/data/2.5/weather?q=huancavelica,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Namwala. http://api.openweathermap.org/data/2.5/weather?q=namwala,zm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Moroni. http://api.openweathermap.org/data/2.5/weather?q=moroni,km&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Pierre. http://api.openweathermap.org/data/2.5/weather?q=saint-pierre,pm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Artyom. http://api.openweathermap.org/data/2.5/weather?q=artyom,az&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Halifax. http://api.openweathermap.org/data/2.5/weather?q=halifax,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Morondava. http://api.openweathermap.org/data/2.5/weather?q=morondava,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Grindavik. http://api.openweathermap.org/data/2.5/weather?q=grindavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Marrakesh. http://api.openweathermap.org/data/2.5/weather?q=marrakesh,ma&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Constitucion. http://api.openweathermap.org/data/2.5/weather?q=constitucion,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kpandae. http://api.openweathermap.org/data/2.5/weather?q=kpandae,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pemba. http://api.openweathermap.org/data/2.5/weather?q=pemba,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carballo. http://api.openweathermap.org/data/2.5/weather?q=carballo,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Muncie. http://api.openweathermap.org/data/2.5/weather?q=muncie,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Massaranduba. http://api.openweathermap.org/data/2.5/weather?q=massaranduba,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Namibe. http://api.openweathermap.org/data/2.5/weather?q=namibe,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Namibe. http://api.openweathermap.org/data/2.5/weather?q=namibe,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sinnamary. http://api.openweathermap.org/data/2.5/weather?q=sinnamary,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Maceio. http://api.openweathermap.org/data/2.5/weather?q=maceio,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nouadhibou. http://api.openweathermap.org/data/2.5/weather?q=nouadhibou,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Berlevag. http://api.openweathermap.org/data/2.5/weather?q=berlevag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Agadez. http://api.openweathermap.org/data/2.5/weather?q=agadez,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sevierville. http://api.openweathermap.org/data/2.5/weather?q=sevierville,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ugoofaaru. http://api.openweathermap.org/data/2.5/weather?q=ugoofaaru,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dhidhdhoo. http://api.openweathermap.org/data/2.5/weather?q=dhidhdhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mercedes. http://api.openweathermap.org/data/2.5/weather?q=mercedes,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Turukhansk. http://api.openweathermap.org/data/2.5/weather?q=turukhansk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Semey. http://api.openweathermap.org/data/2.5/weather?q=semey,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Najran. http://api.openweathermap.org/data/2.5/weather?q=najran,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kilimatinde. http://api.openweathermap.org/data/2.5/weather?q=kilimatinde,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Phaltan. http://api.openweathermap.org/data/2.5/weather?q=phaltan,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nuuk. http://api.openweathermap.org/data/2.5/weather?q=nuuk,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Alanya. http://api.openweathermap.org/data/2.5/weather?q=alanya,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Konza. http://api.openweathermap.org/data/2.5/weather?q=konza,ke&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Troitsk. http://api.openweathermap.org/data/2.5/weather?q=troitsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gouyave. http://api.openweathermap.org/data/2.5/weather?q=gouyave,gd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kondinskoye. http://api.openweathermap.org/data/2.5/weather?q=kondinskoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Diamantino. http://api.openweathermap.org/data/2.5/weather?q=diamantino,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Constitucion. http://api.openweathermap.org/data/2.5/weather?q=constitucion,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Crotone. http://api.openweathermap.org/data/2.5/weather?q=crotone,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Havoysund. http://api.openweathermap.org/data/2.5/weather?q=havoysund,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Moron. http://api.openweathermap.org/data/2.5/weather?q=moron,ve&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Opuwo. http://api.openweathermap.org/data/2.5/weather?q=opuwo,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushtobe. http://api.openweathermap.org/data/2.5/weather?q=ushtobe,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mitu. http://api.openweathermap.org/data/2.5/weather?q=mitu,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Zharkent. http://api.openweathermap.org/data/2.5/weather?q=zharkent,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hearst. http://api.openweathermap.org/data/2.5/weather?q=hearst,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aljezur. http://api.openweathermap.org/data/2.5/weather?q=aljezur,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bonthe. http://api.openweathermap.org/data/2.5/weather?q=bonthe,sl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taltal. http://api.openweathermap.org/data/2.5/weather?q=taltal,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahibadhoo. http://api.openweathermap.org/data/2.5/weather?q=mahibadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Misratah. http://api.openweathermap.org/data/2.5/weather?q=misratah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Harper. http://api.openweathermap.org/data/2.5/weather?q=harper,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ati. http://api.openweathermap.org/data/2.5/weather?q=ati,td&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cassilandia. http://api.openweathermap.org/data/2.5/weather?q=cassilandia,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Rozkishne. http://api.openweathermap.org/data/2.5/weather?q=rozkishne,ua&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Grindavik. http://api.openweathermap.org/data/2.5/weather?q=grindavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Rognan. http://api.openweathermap.org/data/2.5/weather?q=rognan,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vieux-Habitants. http://api.openweathermap.org/data/2.5/weather?q=vieux-habitants,gp&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Skelleftea. http://api.openweathermap.org/data/2.5/weather?q=skelleftea,se&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taltal. http://api.openweathermap.org/data/2.5/weather?q=taltal,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Talcahuano. http://api.openweathermap.org/data/2.5/weather?q=talcahuano,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Poros. http://api.openweathermap.org/data/2.5/weather?q=poros,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gopalpur. http://api.openweathermap.org/data/2.5/weather?q=gopalpur,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Elmina. http://api.openweathermap.org/data/2.5/weather?q=elmina,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bhimunipatnam. http://api.openweathermap.org/data/2.5/weather?q=bhimunipatnam,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hammerfest. http://api.openweathermap.org/data/2.5/weather?q=hammerfest,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ambatolampy. http://api.openweathermap.org/data/2.5/weather?q=ambatolampy,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bizhbulyak. http://api.openweathermap.org/data/2.5/weather?q=bizhbulyak,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ipinda. http://api.openweathermap.org/data/2.5/weather?q=ipinda,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Atar. http://api.openweathermap.org/data/2.5/weather?q=atar,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tsumeb. http://api.openweathermap.org/data/2.5/weather?q=tsumeb,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vagur. http://api.openweathermap.org/data/2.5/weather?q=vagur,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Zaysan. http://api.openweathermap.org/data/2.5/weather?q=zaysan,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tarko-Sale. http://api.openweathermap.org/data/2.5/weather?q=tarko-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hamilton. http://api.openweathermap.org/data/2.5/weather?q=hamilton,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sisimiut. http://api.openweathermap.org/data/2.5/weather?q=sisimiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Le Port. http://api.openweathermap.org/data/2.5/weather?q=le port,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Buzmeyin. http://api.openweathermap.org/data/2.5/weather?q=buzmeyin,tm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pangnirtung. http://api.openweathermap.org/data/2.5/weather?q=pangnirtung,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nsanje. http://api.openweathermap.org/data/2.5/weather?q=nsanje,mw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bonanza. http://api.openweathermap.org/data/2.5/weather?q=bonanza,ni&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Romodanovo. http://api.openweathermap.org/data/2.5/weather?q=romodanovo,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Rawson. http://api.openweathermap.org/data/2.5/weather?q=rawson,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chapais. http://api.openweathermap.org/data/2.5/weather?q=chapais,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Urengoy. http://api.openweathermap.org/data/2.5/weather?q=urengoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Letlhakane. http://api.openweathermap.org/data/2.5/weather?q=letlhakane,bw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Riyadh. http://api.openweathermap.org/data/2.5/weather?q=riyadh,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ripoll. http://api.openweathermap.org/data/2.5/weather?q=ripoll,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Shubarkuduk. http://api.openweathermap.org/data/2.5/weather?q=shubarkuduk,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Manaure. http://api.openweathermap.org/data/2.5/weather?q=manaure,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tutoia. http://api.openweathermap.org/data/2.5/weather?q=tutoia,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Marawi. http://api.openweathermap.org/data/2.5/weather?q=marawi,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Matay. http://api.openweathermap.org/data/2.5/weather?q=matay,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Alta. http://api.openweathermap.org/data/2.5/weather?q=punta alta,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tanout. http://api.openweathermap.org/data/2.5/weather?q=tanout,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oistins. http://api.openweathermap.org/data/2.5/weather?q=oistins,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mangan. http://api.openweathermap.org/data/2.5/weather?q=mangan,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Muros. http://api.openweathermap.org/data/2.5/weather?q=muros,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kalmunai. http://api.openweathermap.org/data/2.5/weather?q=kalmunai,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Thompson. http://api.openweathermap.org/data/2.5/weather?q=thompson,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Krasnovishersk. http://api.openweathermap.org/data/2.5/weather?q=krasnovishersk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Gurjaani. http://api.openweathermap.org/data/2.5/weather?q=gurjaani,ge&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Umm Lajj. http://api.openweathermap.org/data/2.5/weather?q=umm lajj,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Atasu. http://api.openweathermap.org/data/2.5/weather?q=atasu,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vesyegonsk. http://api.openweathermap.org/data/2.5/weather?q=vesyegonsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bubaque. http://api.openweathermap.org/data/2.5/weather?q=bubaque,gw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Cristobal. http://api.openweathermap.org/data/2.5/weather?q=san cristobal,ec&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vardo. http://api.openweathermap.org/data/2.5/weather?q=vardo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: West Bay. http://api.openweathermap.org/data/2.5/weather?q=west bay,ky&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Soyo. http://api.openweathermap.org/data/2.5/weather?q=soyo,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ugoofaaru. http://api.openweathermap.org/data/2.5/weather?q=ugoofaaru,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dodola. http://api.openweathermap.org/data/2.5/weather?q=dodola,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Polyarnyy. http://api.openweathermap.org/data/2.5/weather?q=polyarnyy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Turochak. http://api.openweathermap.org/data/2.5/weather?q=turochak,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Timra. http://api.openweathermap.org/data/2.5/weather?q=timra,se&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Brigantine. http://api.openweathermap.org/data/2.5/weather?q=brigantine,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ngama. http://api.openweathermap.org/data/2.5/weather?q=ngama,td&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bestobe. http://api.openweathermap.org/data/2.5/weather?q=bestobe,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Conde. http://api.openweathermap.org/data/2.5/weather?q=conde,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Grande. http://api.openweathermap.org/data/2.5/weather?q=rio grande,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Felix do Xingu. http://api.openweathermap.org/data/2.5/weather?q=sao felix do xingu,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Katima Mulilo. http://api.openweathermap.org/data/2.5/weather?q=katima mulilo,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cayenne. http://api.openweathermap.org/data/2.5/weather?q=cayenne,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tiznit. http://api.openweathermap.org/data/2.5/weather?q=tiznit,ma&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vire. http://api.openweathermap.org/data/2.5/weather?q=vire,fr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Cristobal. http://api.openweathermap.org/data/2.5/weather?q=san cristobal,ec&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Manitouwadge. http://api.openweathermap.org/data/2.5/weather?q=manitouwadge,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Soyo. http://api.openweathermap.org/data/2.5/weather?q=soyo,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Temirtau. http://api.openweathermap.org/data/2.5/weather?q=temirtau,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dakar. http://api.openweathermap.org/data/2.5/weather?q=dakar,sn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hun. http://api.openweathermap.org/data/2.5/weather?q=hun,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kotri. http://api.openweathermap.org/data/2.5/weather?q=kotri,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nchelenge. http://api.openweathermap.org/data/2.5/weather?q=nchelenge,zm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Huarmey. http://api.openweathermap.org/data/2.5/weather?q=huarmey,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ous. http://api.openweathermap.org/data/2.5/weather?q=ous,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vyshestebliyevskaya. http://api.openweathermap.org/data/2.5/weather?q=vyshestebliyevskaya,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Huarmey. http://api.openweathermap.org/data/2.5/weather?q=huarmey,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vyartsilya. http://api.openweathermap.org/data/2.5/weather?q=vyartsilya,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bundibugyo. http://api.openweathermap.org/data/2.5/weather?q=bundibugyo,ug&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lodja. http://api.openweathermap.org/data/2.5/weather?q=lodja,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ust-Kalmanka. http://api.openweathermap.org/data/2.5/weather?q=ust-kalmanka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Weligama. http://api.openweathermap.org/data/2.5/weather?q=weligama,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Akom. http://api.openweathermap.org/data/2.5/weather?q=akom,cm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jaciara. http://api.openweathermap.org/data/2.5/weather?q=jaciara,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kaspiyskiy. http://api.openweathermap.org/data/2.5/weather?q=kaspiyskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kangaatsiaq. http://api.openweathermap.org/data/2.5/weather?q=kangaatsiaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Rawson. http://api.openweathermap.org/data/2.5/weather?q=rawson,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mollendo. http://api.openweathermap.org/data/2.5/weather?q=mollendo,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Alcains. http://api.openweathermap.org/data/2.5/weather?q=alcains,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lamu. http://api.openweathermap.org/data/2.5/weather?q=lamu,ke&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mao. http://api.openweathermap.org/data/2.5/weather?q=mao,td&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vardo. http://api.openweathermap.org/data/2.5/weather?q=vardo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nevel. http://api.openweathermap.org/data/2.5/weather?q=nevel,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Shieli. http://api.openweathermap.org/data/2.5/weather?q=shieli,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bonavista. http://api.openweathermap.org/data/2.5/weather?q=bonavista,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Buraydah. http://api.openweathermap.org/data/2.5/weather?q=buraydah,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aksarayskiy. http://api.openweathermap.org/data/2.5/weather?q=aksarayskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Matadi. http://api.openweathermap.org/data/2.5/weather?q=matadi,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Diamantino. http://api.openweathermap.org/data/2.5/weather?q=diamantino,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vilcun. http://api.openweathermap.org/data/2.5/weather?q=vilcun,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chastyye. http://api.openweathermap.org/data/2.5/weather?q=chastyye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Korla. http://api.openweathermap.org/data/2.5/weather?q=korla,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Trairi. http://api.openweathermap.org/data/2.5/weather?q=trairi,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Elgin. http://api.openweathermap.org/data/2.5/weather?q=elgin,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rosetta. http://api.openweathermap.org/data/2.5/weather?q=rosetta,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Koungheul. http://api.openweathermap.org/data/2.5/weather?q=koungheul,sn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ritchie. http://api.openweathermap.org/data/2.5/weather?q=ritchie,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mitsamiouli. http://api.openweathermap.org/data/2.5/weather?q=mitsamiouli,km&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Guarapari. http://api.openweathermap.org/data/2.5/weather?q=guarapari,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sandovo. http://api.openweathermap.org/data/2.5/weather?q=sandovo,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Gunjur. http://api.openweathermap.org/data/2.5/weather?q=gunjur,gm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dajabon. http://api.openweathermap.org/data/2.5/weather?q=dajabon,do&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coihaique. http://api.openweathermap.org/data/2.5/weather?q=coihaique,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Touros. http://api.openweathermap.org/data/2.5/weather?q=touros,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carutapera. http://api.openweathermap.org/data/2.5/weather?q=carutapera,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vestmanna. http://api.openweathermap.org/data/2.5/weather?q=vestmanna,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Marquette. http://api.openweathermap.org/data/2.5/weather?q=marquette,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Batsfjord. http://api.openweathermap.org/data/2.5/weather?q=batsfjord,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sorgun. http://api.openweathermap.org/data/2.5/weather?q=sorgun,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aktau. http://api.openweathermap.org/data/2.5/weather?q=aktau,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cayenne. http://api.openweathermap.org/data/2.5/weather?q=cayenne,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Villaviciosa. http://api.openweathermap.org/data/2.5/weather?q=villaviciosa,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vianopolis. http://api.openweathermap.org/data/2.5/weather?q=vianopolis,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Havelock. http://api.openweathermap.org/data/2.5/weather?q=havelock,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Areni. http://api.openweathermap.org/data/2.5/weather?q=areni,am&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Krylovskaya. http://api.openweathermap.org/data/2.5/weather?q=krylovskaya,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Abha. http://api.openweathermap.org/data/2.5/weather?q=abha,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luba. http://api.openweathermap.org/data/2.5/weather?q=luba,gq&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Margate. http://api.openweathermap.org/data/2.5/weather?q=margate,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Itarema. http://api.openweathermap.org/data/2.5/weather?q=itarema,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Savinka. http://api.openweathermap.org/data/2.5/weather?q=savinka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bembereke. http://api.openweathermap.org/data/2.5/weather?q=bembereke,bj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ardabil. http://api.openweathermap.org/data/2.5/weather?q=ardabil,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tevriz. http://api.openweathermap.org/data/2.5/weather?q=tevriz,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Takoradi. http://api.openweathermap.org/data/2.5/weather?q=takoradi,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Birjand. http://api.openweathermap.org/data/2.5/weather?q=birjand,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taoudenni. http://api.openweathermap.org/data/2.5/weather?q=taoudenni,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bani. http://api.openweathermap.org/data/2.5/weather?q=bani,do&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salinas. http://api.openweathermap.org/data/2.5/weather?q=salinas,ec&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaqortoq. http://api.openweathermap.org/data/2.5/weather?q=qaqortoq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Goure. http://api.openweathermap.org/data/2.5/weather?q=goure,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bageshwar. http://api.openweathermap.org/data/2.5/weather?q=bageshwar,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hualmay. http://api.openweathermap.org/data/2.5/weather?q=hualmay,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Severodvinsk. http://api.openweathermap.org/data/2.5/weather?q=severodvinsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Arandis. http://api.openweathermap.org/data/2.5/weather?q=arandis,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iskateley. http://api.openweathermap.org/data/2.5/weather?q=iskateley,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Opuwo. http://api.openweathermap.org/data/2.5/weather?q=opuwo,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nioki. http://api.openweathermap.org/data/2.5/weather?q=nioki,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dudinka. http://api.openweathermap.org/data/2.5/weather?q=dudinka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sept-Iles. http://api.openweathermap.org/data/2.5/weather?q=sept-iles,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Akdepe. http://api.openweathermap.org/data/2.5/weather?q=akdepe,tm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Concordia. http://api.openweathermap.org/data/2.5/weather?q=concordia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Maragogi. http://api.openweathermap.org/data/2.5/weather?q=maragogi,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sarankhola. http://api.openweathermap.org/data/2.5/weather?q=sarankhola,bd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bonavista. http://api.openweathermap.org/data/2.5/weather?q=bonavista,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Khorixas. http://api.openweathermap.org/data/2.5/weather?q=khorixas,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bonfim. http://api.openweathermap.org/data/2.5/weather?q=bonfim,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hamilton. http://api.openweathermap.org/data/2.5/weather?q=hamilton,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Atasu. http://api.openweathermap.org/data/2.5/weather?q=atasu,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chapais. http://api.openweathermap.org/data/2.5/weather?q=chapais,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gurgaon. http://api.openweathermap.org/data/2.5/weather?q=gurgaon,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dalbandin. http://api.openweathermap.org/data/2.5/weather?q=dalbandin,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sombrio. http://api.openweathermap.org/data/2.5/weather?q=sombrio,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Muzaffargarh. http://api.openweathermap.org/data/2.5/weather?q=muzaffargarh,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Loum. http://api.openweathermap.org/data/2.5/weather?q=loum,cm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gloucester. http://api.openweathermap.org/data/2.5/weather?q=gloucester,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Krasnovishersk. http://api.openweathermap.org/data/2.5/weather?q=krasnovishersk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kirovskiy. http://api.openweathermap.org/data/2.5/weather?q=kirovskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Trinidad. http://api.openweathermap.org/data/2.5/weather?q=trinidad,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Wattegama. http://api.openweathermap.org/data/2.5/weather?q=wattegama,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Arucas. http://api.openweathermap.org/data/2.5/weather?q=arucas,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vagur. http://api.openweathermap.org/data/2.5/weather?q=vagur,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sinnamary. http://api.openweathermap.org/data/2.5/weather?q=sinnamary,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bouna. http://api.openweathermap.org/data/2.5/weather?q=bouna,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Korla. http://api.openweathermap.org/data/2.5/weather?q=korla,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Michel-des-Saints. http://api.openweathermap.org/data/2.5/weather?q=saint-michel-des-saints,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ewo. http://api.openweathermap.org/data/2.5/weather?q=ewo,cg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gazanjyk. http://api.openweathermap.org/data/2.5/weather?q=gazanjyk,tm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Baijiantan. http://api.openweathermap.org/data/2.5/weather?q=baijiantan,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nuuk. http://api.openweathermap.org/data/2.5/weather?q=nuuk,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aasiaat. http://api.openweathermap.org/data/2.5/weather?q=aasiaat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Paul. http://api.openweathermap.org/data/2.5/weather?q=saint-paul,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luque. http://api.openweathermap.org/data/2.5/weather?q=luque,py&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Meteti. http://api.openweathermap.org/data/2.5/weather?q=meteti,pa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Warsaw. http://api.openweathermap.org/data/2.5/weather?q=warsaw,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Koungou. http://api.openweathermap.org/data/2.5/weather?q=koungou,yt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lahan. http://api.openweathermap.org/data/2.5/weather?q=lahan,np&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Xuddur. http://api.openweathermap.org/data/2.5/weather?q=xuddur,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Albany. http://api.openweathermap.org/data/2.5/weather?q=albany,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Voslobeni. http://api.openweathermap.org/data/2.5/weather?q=voslobeni,ro&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iskateley. http://api.openweathermap.org/data/2.5/weather?q=iskateley,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Margate. http://api.openweathermap.org/data/2.5/weather?q=margate,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Namibe. http://api.openweathermap.org/data/2.5/weather?q=namibe,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bilma. http://api.openweathermap.org/data/2.5/weather?q=bilma,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Osorno. http://api.openweathermap.org/data/2.5/weather?q=osorno,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Praia. http://api.openweathermap.org/data/2.5/weather?q=praia,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yerkoy. http://api.openweathermap.org/data/2.5/weather?q=yerkoy,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Uyo. http://api.openweathermap.org/data/2.5/weather?q=uyo,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Sabha. http://api.openweathermap.org/data/2.5/weather?q=sabha,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Thinadhoo. http://api.openweathermap.org/data/2.5/weather?q=thinadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lewisville. http://api.openweathermap.org/data/2.5/weather?q=lewisville,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Novyy Urengoy. http://api.openweathermap.org/data/2.5/weather?q=novyy urengoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salinopolis. http://api.openweathermap.org/data/2.5/weather?q=salinopolis,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Atar. http://api.openweathermap.org/data/2.5/weather?q=atar,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jalu. http://api.openweathermap.org/data/2.5/weather?q=jalu,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chicama. http://api.openweathermap.org/data/2.5/weather?q=chicama,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Francois. http://api.openweathermap.org/data/2.5/weather?q=saint-francois,gp&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Moroni. http://api.openweathermap.org/data/2.5/weather?q=moroni,km&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kayerkan. http://api.openweathermap.org/data/2.5/weather?q=kayerkan,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Roald. http://api.openweathermap.org/data/2.5/weather?q=roald,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jalu. http://api.openweathermap.org/data/2.5/weather?q=jalu,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oxilithos. http://api.openweathermap.org/data/2.5/weather?q=oxilithos,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Zarasai. http://api.openweathermap.org/data/2.5/weather?q=zarasai,lt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chimore. http://api.openweathermap.org/data/2.5/weather?q=chimore,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vredendal. http://api.openweathermap.org/data/2.5/weather?q=vredendal,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cangas. http://api.openweathermap.org/data/2.5/weather?q=cangas,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pisco. http://api.openweathermap.org/data/2.5/weather?q=pisco,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Basoko. http://api.openweathermap.org/data/2.5/weather?q=basoko,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Oranjestad. http://api.openweathermap.org/data/2.5/weather?q=oranjestad,aw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vuktyl. http://api.openweathermap.org/data/2.5/weather?q=vuktyl,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Camargo. http://api.openweathermap.org/data/2.5/weather?q=camargo,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bhuj. http://api.openweathermap.org/data/2.5/weather?q=bhuj,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Boende. http://api.openweathermap.org/data/2.5/weather?q=boende,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Henties Bay. http://api.openweathermap.org/data/2.5/weather?q=henties bay,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dabhol. http://api.openweathermap.org/data/2.5/weather?q=dabhol,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Taltal. http://api.openweathermap.org/data/2.5/weather?q=taltal,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Albany. http://api.openweathermap.org/data/2.5/weather?q=albany,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Giyon. http://api.openweathermap.org/data/2.5/weather?q=giyon,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mange. http://api.openweathermap.org/data/2.5/weather?q=mange,sl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Gilgit. http://api.openweathermap.org/data/2.5/weather?q=gilgit,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bouna. http://api.openweathermap.org/data/2.5/weather?q=bouna,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Brezice. http://api.openweathermap.org/data/2.5/weather?q=brezice,si&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: At-Bashi. http://api.openweathermap.org/data/2.5/weather?q=at-bashi,kg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Paamiut. http://api.openweathermap.org/data/2.5/weather?q=paamiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Novobirilyussy. http://api.openweathermap.org/data/2.5/weather?q=novobirilyussy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hukuntsi. http://api.openweathermap.org/data/2.5/weather?q=hukuntsi,bw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cayenne. http://api.openweathermap.org/data/2.5/weather?q=cayenne,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Leshukonskoye. http://api.openweathermap.org/data/2.5/weather?q=leshukonskoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Anloga. http://api.openweathermap.org/data/2.5/weather?q=anloga,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Juan. http://api.openweathermap.org/data/2.5/weather?q=san juan,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Akdepe. http://api.openweathermap.org/data/2.5/weather?q=akdepe,tm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Grande. http://api.openweathermap.org/data/2.5/weather?q=rio grande,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hammerfest. http://api.openweathermap.org/data/2.5/weather?q=hammerfest,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Moron. http://api.openweathermap.org/data/2.5/weather?q=moron,ve&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bud. http://api.openweathermap.org/data/2.5/weather?q=bud,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Uyuni. http://api.openweathermap.org/data/2.5/weather?q=uyuni,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kulhudhuffushi. http://api.openweathermap.org/data/2.5/weather?q=kulhudhuffushi,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Keti Bandar. http://api.openweathermap.org/data/2.5/weather?q=keti bandar,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Campo Formoso. http://api.openweathermap.org/data/2.5/weather?q=campo formoso,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Camacha. http://api.openweathermap.org/data/2.5/weather?q=camacha,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ancud. http://api.openweathermap.org/data/2.5/weather?q=ancud,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tessalit. http://api.openweathermap.org/data/2.5/weather?q=tessalit,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kaduna. http://api.openweathermap.org/data/2.5/weather?q=kaduna,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ngorongoro. http://api.openweathermap.org/data/2.5/weather?q=ngorongoro,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Znamenskoye. http://api.openweathermap.org/data/2.5/weather?q=znamenskoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dirba. http://api.openweathermap.org/data/2.5/weather?q=dirba,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saryozek. http://api.openweathermap.org/data/2.5/weather?q=saryozek,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Puerto Carreno. http://api.openweathermap.org/data/2.5/weather?q=puerto carreno,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahibadhoo. http://api.openweathermap.org/data/2.5/weather?q=mahibadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Husavik. http://api.openweathermap.org/data/2.5/weather?q=husavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ankazoabo. http://api.openweathermap.org/data/2.5/weather?q=ankazoabo,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tupiza. http://api.openweathermap.org/data/2.5/weather?q=tupiza,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Conde. http://api.openweathermap.org/data/2.5/weather?q=conde,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Afrikanda. http://api.openweathermap.org/data/2.5/weather?q=afrikanda,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cascais. http://api.openweathermap.org/data/2.5/weather?q=cascais,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Riyadh. http://api.openweathermap.org/data/2.5/weather?q=riyadh,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bumba. http://api.openweathermap.org/data/2.5/weather?q=bumba,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kisangani. http://api.openweathermap.org/data/2.5/weather?q=kisangani,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Beloha. http://api.openweathermap.org/data/2.5/weather?q=beloha,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Matay. http://api.openweathermap.org/data/2.5/weather?q=matay,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Boquira. http://api.openweathermap.org/data/2.5/weather?q=boquira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jaleswar. http://api.openweathermap.org/data/2.5/weather?q=jaleswar,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Franca do Campo. http://api.openweathermap.org/data/2.5/weather?q=vila franca do campo,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sinnamary. http://api.openweathermap.org/data/2.5/weather?q=sinnamary,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Leesburg. http://api.openweathermap.org/data/2.5/weather?q=leesburg,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Waddan. http://api.openweathermap.org/data/2.5/weather?q=waddan,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Conceicao do Araguaia. http://api.openweathermap.org/data/2.5/weather?q=conceicao do araguaia,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Loanda. http://api.openweathermap.org/data/2.5/weather?q=loanda,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Gallegos. http://api.openweathermap.org/data/2.5/weather?q=rio gallegos,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Porto Novo. http://api.openweathermap.org/data/2.5/weather?q=porto novo,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mabaruma. http://api.openweathermap.org/data/2.5/weather?q=mabaruma,gy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Abu Zabad. http://api.openweathermap.org/data/2.5/weather?q=abu zabad,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bay Saint Louis. http://api.openweathermap.org/data/2.5/weather?q=bay saint louis,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Aswan. http://api.openweathermap.org/data/2.5/weather?q=aswan,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sol-Iletsk. http://api.openweathermap.org/data/2.5/weather?q=sol-iletsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Scarborough. http://api.openweathermap.org/data/2.5/weather?q=scarborough,tt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kormilovka. http://api.openweathermap.org/data/2.5/weather?q=kormilovka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Proletariy. http://api.openweathermap.org/data/2.5/weather?q=proletariy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kovdor. http://api.openweathermap.org/data/2.5/weather?q=kovdor,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pisco. http://api.openweathermap.org/data/2.5/weather?q=pisco,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Harper. http://api.openweathermap.org/data/2.5/weather?q=harper,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nara. http://api.openweathermap.org/data/2.5/weather?q=nara,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Filipe. http://api.openweathermap.org/data/2.5/weather?q=sao filipe,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dubai. http://api.openweathermap.org/data/2.5/weather?q=dubai,ae&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lakota. http://api.openweathermap.org/data/2.5/weather?q=lakota,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Udomlya. http://api.openweathermap.org/data/2.5/weather?q=udomlya,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luanda. http://api.openweathermap.org/data/2.5/weather?q=luanda,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Oschatz. http://api.openweathermap.org/data/2.5/weather?q=oschatz,de&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hornepayne. http://api.openweathermap.org/data/2.5/weather?q=hornepayne,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mega. http://api.openweathermap.org/data/2.5/weather?q=mega,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Filipe. http://api.openweathermap.org/data/2.5/weather?q=sao filipe,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nouakchott. http://api.openweathermap.org/data/2.5/weather?q=nouakchott,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gijon. http://api.openweathermap.org/data/2.5/weather?q=gijon,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nara. http://api.openweathermap.org/data/2.5/weather?q=nara,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Omboue. http://api.openweathermap.org/data/2.5/weather?q=omboue,ga&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Gallegos. http://api.openweathermap.org/data/2.5/weather?q=rio gallegos,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sistranda. http://api.openweathermap.org/data/2.5/weather?q=sistranda,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rawson. http://api.openweathermap.org/data/2.5/weather?q=rawson,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Fenoarivo. http://api.openweathermap.org/data/2.5/weather?q=fenoarivo,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Alvorada. http://api.openweathermap.org/data/2.5/weather?q=alvorada,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sisimiut. http://api.openweathermap.org/data/2.5/weather?q=sisimiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Franca do Campo. http://api.openweathermap.org/data/2.5/weather?q=vila franca do campo,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bulungu. http://api.openweathermap.org/data/2.5/weather?q=bulungu,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kenosha. http://api.openweathermap.org/data/2.5/weather?q=kenosha,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Filipe. http://api.openweathermap.org/data/2.5/weather?q=sao filipe,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Berlevag. http://api.openweathermap.org/data/2.5/weather?q=berlevag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mumbwa. http://api.openweathermap.org/data/2.5/weather?q=mumbwa,zm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Loknya. http://api.openweathermap.org/data/2.5/weather?q=loknya,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Guarapari. http://api.openweathermap.org/data/2.5/weather?q=guarapari,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bela. http://api.openweathermap.org/data/2.5/weather?q=bela,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sinnamary. http://api.openweathermap.org/data/2.5/weather?q=sinnamary,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Husavik. http://api.openweathermap.org/data/2.5/weather?q=husavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Zhanakorgan. http://api.openweathermap.org/data/2.5/weather?q=zhanakorgan,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Huarmey. http://api.openweathermap.org/data/2.5/weather?q=huarmey,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Maria. http://api.openweathermap.org/data/2.5/weather?q=santa maria,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salinopolis. http://api.openweathermap.org/data/2.5/weather?q=salinopolis,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coromandel. http://api.openweathermap.org/data/2.5/weather?q=coromandel,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Betanzos. http://api.openweathermap.org/data/2.5/weather?q=betanzos,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Trairi. http://api.openweathermap.org/data/2.5/weather?q=trairi,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Grindavik. http://api.openweathermap.org/data/2.5/weather?q=grindavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Taybad. http://api.openweathermap.org/data/2.5/weather?q=taybad,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Serdobsk. http://api.openweathermap.org/data/2.5/weather?q=serdobsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kaele. http://api.openweathermap.org/data/2.5/weather?q=kaele,cm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Naron. http://api.openweathermap.org/data/2.5/weather?q=naron,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ordu. http://api.openweathermap.org/data/2.5/weather?q=ordu,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Didwana. http://api.openweathermap.org/data/2.5/weather?q=didwana,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Malacky. http://api.openweathermap.org/data/2.5/weather?q=malacky,sk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arlit. http://api.openweathermap.org/data/2.5/weather?q=arlit,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Niny. http://api.openweathermap.org/data/2.5/weather?q=niny,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Anupgarh. http://api.openweathermap.org/data/2.5/weather?q=anupgarh,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Thunder Bay. http://api.openweathermap.org/data/2.5/weather?q=thunder bay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Shevchenkove. http://api.openweathermap.org/data/2.5/weather?q=shevchenkove,ua&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Andres. http://api.openweathermap.org/data/2.5/weather?q=san andres,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bahia Blanca. http://api.openweathermap.org/data/2.5/weather?q=bahia blanca,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mezen. http://api.openweathermap.org/data/2.5/weather?q=mezen,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Marsa Matruh. http://api.openweathermap.org/data/2.5/weather?q=marsa matruh,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Shelburne. http://api.openweathermap.org/data/2.5/weather?q=shelburne,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Puerto Carreno. http://api.openweathermap.org/data/2.5/weather?q=puerto carreno,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dapaong. http://api.openweathermap.org/data/2.5/weather?q=dapaong,tg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Gabriel da Cachoeira. http://api.openweathermap.org/data/2.5/weather?q=sao gabriel da cachoeira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arlit. http://api.openweathermap.org/data/2.5/weather?q=arlit,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lobito. http://api.openweathermap.org/data/2.5/weather?q=lobito,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Itarantim. http://api.openweathermap.org/data/2.5/weather?q=itarantim,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cerkezkoy. http://api.openweathermap.org/data/2.5/weather?q=cerkezkoy,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vestmanna. http://api.openweathermap.org/data/2.5/weather?q=vestmanna,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Danville. http://api.openweathermap.org/data/2.5/weather?q=danville,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Iquique. http://api.openweathermap.org/data/2.5/weather?q=iquique,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Iranshahr. http://api.openweathermap.org/data/2.5/weather?q=iranshahr,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ibra. http://api.openweathermap.org/data/2.5/weather?q=ibra,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ballina. http://api.openweathermap.org/data/2.5/weather?q=ballina,ie&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Riyadh. http://api.openweathermap.org/data/2.5/weather?q=riyadh,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Paita. http://api.openweathermap.org/data/2.5/weather?q=paita,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ust-Tsilma. http://api.openweathermap.org/data/2.5/weather?q=ust-tsilma,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Camocim. http://api.openweathermap.org/data/2.5/weather?q=camocim,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carballo. http://api.openweathermap.org/data/2.5/weather?q=carballo,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Niteroi. http://api.openweathermap.org/data/2.5/weather?q=niteroi,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Los Llanos de Aridane. http://api.openweathermap.org/data/2.5/weather?q=los llanos de aridane,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Leh. http://api.openweathermap.org/data/2.5/weather?q=leh,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Guararapes. http://api.openweathermap.org/data/2.5/weather?q=guararapes,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Macon. http://api.openweathermap.org/data/2.5/weather?q=macon,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Marsa Matruh. http://api.openweathermap.org/data/2.5/weather?q=marsa matruh,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sur. http://api.openweathermap.org/data/2.5/weather?q=sur,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pasni. http://api.openweathermap.org/data/2.5/weather?q=pasni,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Richards Bay. http://api.openweathermap.org/data/2.5/weather?q=richards bay,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Natal. http://api.openweathermap.org/data/2.5/weather?q=natal,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Shache. http://api.openweathermap.org/data/2.5/weather?q=shache,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bocas del Toro. http://api.openweathermap.org/data/2.5/weather?q=bocas del toro,pa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bonthe. http://api.openweathermap.org/data/2.5/weather?q=bonthe,sl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Machiques. http://api.openweathermap.org/data/2.5/weather?q=machiques,ve&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Thompson. http://api.openweathermap.org/data/2.5/weather?q=thompson,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punalur. http://api.openweathermap.org/data/2.5/weather?q=punalur,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santiago del Estero. http://api.openweathermap.org/data/2.5/weather?q=santiago del estero,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Namibe. http://api.openweathermap.org/data/2.5/weather?q=namibe,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Namibe. http://api.openweathermap.org/data/2.5/weather?q=namibe,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rawson. http://api.openweathermap.org/data/2.5/weather?q=rawson,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tabou. http://api.openweathermap.org/data/2.5/weather?q=tabou,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ballina. http://api.openweathermap.org/data/2.5/weather?q=ballina,ie&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kargil. http://api.openweathermap.org/data/2.5/weather?q=kargil,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Krasnovishersk. http://api.openweathermap.org/data/2.5/weather?q=krasnovishersk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Matara. http://api.openweathermap.org/data/2.5/weather?q=matara,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Buchanan. http://api.openweathermap.org/data/2.5/weather?q=buchanan,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kitangari. http://api.openweathermap.org/data/2.5/weather?q=kitangari,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Aligudarz. http://api.openweathermap.org/data/2.5/weather?q=aligudarz,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Meulaboh. http://api.openweathermap.org/data/2.5/weather?q=meulaboh,id&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Darnah. http://api.openweathermap.org/data/2.5/weather?q=darnah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Glens Falls. http://api.openweathermap.org/data/2.5/weather?q=glens falls,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kalevala. http://api.openweathermap.org/data/2.5/weather?q=kalevala,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Matara. http://api.openweathermap.org/data/2.5/weather?q=matara,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tocopilla. http://api.openweathermap.org/data/2.5/weather?q=tocopilla,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Harper. http://api.openweathermap.org/data/2.5/weather?q=harper,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Buraydah. http://api.openweathermap.org/data/2.5/weather?q=buraydah,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jumla. http://api.openweathermap.org/data/2.5/weather?q=jumla,np&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mocuba. http://api.openweathermap.org/data/2.5/weather?q=mocuba,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Basse-Pointe. http://api.openweathermap.org/data/2.5/weather?q=basse-pointe,mq&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Joao da Barra. http://api.openweathermap.org/data/2.5/weather?q=sao joao da barra,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Praia da Vitoria. http://api.openweathermap.org/data/2.5/weather?q=praia da vitoria,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Matadi. http://api.openweathermap.org/data/2.5/weather?q=matadi,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pangnirtung. http://api.openweathermap.org/data/2.5/weather?q=pangnirtung,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta Delgada. http://api.openweathermap.org/data/2.5/weather?q=ponta delgada,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Benguela. http://api.openweathermap.org/data/2.5/weather?q=benguela,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Elizabeth City. http://api.openweathermap.org/data/2.5/weather?q=elizabeth city,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vardo. http://api.openweathermap.org/data/2.5/weather?q=vardo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kvarkeno. http://api.openweathermap.org/data/2.5/weather?q=kvarkeno,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Puerto Leguizamo. http://api.openweathermap.org/data/2.5/weather?q=puerto leguizamo,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Alta Floresta. http://api.openweathermap.org/data/2.5/weather?q=alta floresta,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sochi. http://api.openweathermap.org/data/2.5/weather?q=sochi,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Awbari. http://api.openweathermap.org/data/2.5/weather?q=awbari,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Berlevag. http://api.openweathermap.org/data/2.5/weather?q=berlevag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Usinsk. http://api.openweathermap.org/data/2.5/weather?q=usinsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tromso. http://api.openweathermap.org/data/2.5/weather?q=tromso,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lukovetskiy. http://api.openweathermap.org/data/2.5/weather?q=lukovetskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Eganville. http://api.openweathermap.org/data/2.5/weather?q=eganville,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Maria. http://api.openweathermap.org/data/2.5/weather?q=santa maria,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Oyem. http://api.openweathermap.org/data/2.5/weather?q=oyem,ga&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pasni. http://api.openweathermap.org/data/2.5/weather?q=pasni,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Progreso. http://api.openweathermap.org/data/2.5/weather?q=progreso,mx&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Soyo. http://api.openweathermap.org/data/2.5/weather?q=soyo,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostersund. http://api.openweathermap.org/data/2.5/weather?q=ostersund,se&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tallahassee. http://api.openweathermap.org/data/2.5/weather?q=tallahassee,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Clyde River. http://api.openweathermap.org/data/2.5/weather?q=clyde river,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ibra. http://api.openweathermap.org/data/2.5/weather?q=ibra,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Doka. http://api.openweathermap.org/data/2.5/weather?q=doka,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qasigiannguit. http://api.openweathermap.org/data/2.5/weather?q=qasigiannguit,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Inta. http://api.openweathermap.org/data/2.5/weather?q=inta,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Urambo. http://api.openweathermap.org/data/2.5/weather?q=urambo,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ivankiv. http://api.openweathermap.org/data/2.5/weather?q=ivankiv,ua&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Adrar. http://api.openweathermap.org/data/2.5/weather?q=adrar,dz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Komarikhinskiy. http://api.openweathermap.org/data/2.5/weather?q=komarikhinskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Puerto Suarez. http://api.openweathermap.org/data/2.5/weather?q=puerto suarez,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Makat. http://api.openweathermap.org/data/2.5/weather?q=makat,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pizarro. http://api.openweathermap.org/data/2.5/weather?q=pizarro,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kyzyl-Suu. http://api.openweathermap.org/data/2.5/weather?q=kyzyl-suu,kg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Plettenberg Bay. http://api.openweathermap.org/data/2.5/weather?q=plettenberg bay,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Komsomolskiy. http://api.openweathermap.org/data/2.5/weather?q=komsomolskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Touros. http://api.openweathermap.org/data/2.5/weather?q=touros,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Fuengirola. http://api.openweathermap.org/data/2.5/weather?q=fuengirola,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nizhnekamsk. http://api.openweathermap.org/data/2.5/weather?q=nizhnekamsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Augustin. http://api.openweathermap.org/data/2.5/weather?q=saint-augustin,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Oktyabrskoye. http://api.openweathermap.org/data/2.5/weather?q=oktyabrskoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mabaruma. http://api.openweathermap.org/data/2.5/weather?q=mabaruma,gy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Clyde River. http://api.openweathermap.org/data/2.5/weather?q=clyde river,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Aasiaat. http://api.openweathermap.org/data/2.5/weather?q=aasiaat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Falavarjan. http://api.openweathermap.org/data/2.5/weather?q=falavarjan,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dudinka. http://api.openweathermap.org/data/2.5/weather?q=dudinka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nizwa. http://api.openweathermap.org/data/2.5/weather?q=nizwa,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Asuncion. http://api.openweathermap.org/data/2.5/weather?q=asuncion,py&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Atbasar. http://api.openweathermap.org/data/2.5/weather?q=atbasar,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vargem Grande do Sul. http://api.openweathermap.org/data/2.5/weather?q=vargem grande do sul,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Talnakh. http://api.openweathermap.org/data/2.5/weather?q=talnakh,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Aleksandrov Gay. http://api.openweathermap.org/data/2.5/weather?q=aleksandrov gay,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Graaff-Reinet. http://api.openweathermap.org/data/2.5/weather?q=graaff-reinet,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Uvarovka. http://api.openweathermap.org/data/2.5/weather?q=uvarovka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Doha. http://api.openweathermap.org/data/2.5/weather?q=doha,qa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Balassagyarmat. http://api.openweathermap.org/data/2.5/weather?q=balassagyarmat,hu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chapleau. http://api.openweathermap.org/data/2.5/weather?q=chapleau,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Apatity. http://api.openweathermap.org/data/2.5/weather?q=apatity,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bo. http://api.openweathermap.org/data/2.5/weather?q=bo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bolobo. http://api.openweathermap.org/data/2.5/weather?q=bolobo,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Muros. http://api.openweathermap.org/data/2.5/weather?q=muros,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Uaua. http://api.openweathermap.org/data/2.5/weather?q=uaua,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Rafael. http://api.openweathermap.org/data/2.5/weather?q=san rafael,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Filipe. http://api.openweathermap.org/data/2.5/weather?q=sao filipe,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tocopilla. http://api.openweathermap.org/data/2.5/weather?q=tocopilla,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ancud. http://api.openweathermap.org/data/2.5/weather?q=ancud,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cockburn Town. http://api.openweathermap.org/data/2.5/weather?q=cockburn town,bs&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Valparaiso. http://api.openweathermap.org/data/2.5/weather?q=valparaiso,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sume. http://api.openweathermap.org/data/2.5/weather?q=sume,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Iquitos. http://api.openweathermap.org/data/2.5/weather?q=iquitos,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Paita. http://api.openweathermap.org/data/2.5/weather?q=paita,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Barauna. http://api.openweathermap.org/data/2.5/weather?q=barauna,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Capoterra. http://api.openweathermap.org/data/2.5/weather?q=capoterra,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mirnyy. http://api.openweathermap.org/data/2.5/weather?q=mirnyy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Plettenberg Bay. http://api.openweathermap.org/data/2.5/weather?q=plettenberg bay,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nouadhibou. http://api.openweathermap.org/data/2.5/weather?q=nouadhibou,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ancud. http://api.openweathermap.org/data/2.5/weather?q=ancud,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Inta. http://api.openweathermap.org/data/2.5/weather?q=inta,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dir. http://api.openweathermap.org/data/2.5/weather?q=dir,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Castelbuono. http://api.openweathermap.org/data/2.5/weather?q=castelbuono,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pascagoula. http://api.openweathermap.org/data/2.5/weather?q=pascagoula,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Hawkesbury. http://api.openweathermap.org/data/2.5/weather?q=port hawkesbury,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Abu Dhabi. http://api.openweathermap.org/data/2.5/weather?q=abu dhabi,ae&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rocha. http://api.openweathermap.org/data/2.5/weather?q=rocha,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vestmanna. http://api.openweathermap.org/data/2.5/weather?q=vestmanna,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Humberto de Campos. http://api.openweathermap.org/data/2.5/weather?q=humberto de campos,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Harper. http://api.openweathermap.org/data/2.5/weather?q=harper,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Henties Bay. http://api.openweathermap.org/data/2.5/weather?q=henties bay,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Acari. http://api.openweathermap.org/data/2.5/weather?q=acari,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nizwa. http://api.openweathermap.org/data/2.5/weather?q=nizwa,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rocha. http://api.openweathermap.org/data/2.5/weather?q=rocha,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Placetas. http://api.openweathermap.org/data/2.5/weather?q=placetas,cu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Imbituba. http://api.openweathermap.org/data/2.5/weather?q=imbituba,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kuhdasht. http://api.openweathermap.org/data/2.5/weather?q=kuhdasht,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bandarbeyla. http://api.openweathermap.org/data/2.5/weather?q=bandarbeyla,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Olinda. http://api.openweathermap.org/data/2.5/weather?q=olinda,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tabory. http://api.openweathermap.org/data/2.5/weather?q=tabory,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rosetta. http://api.openweathermap.org/data/2.5/weather?q=rosetta,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ploemeur. http://api.openweathermap.org/data/2.5/weather?q=ploemeur,fr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rezekne. http://api.openweathermap.org/data/2.5/weather?q=rezekne,lv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sisimiut. http://api.openweathermap.org/data/2.5/weather?q=sisimiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Wilmington. http://api.openweathermap.org/data/2.5/weather?q=wilmington,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Benguela. http://api.openweathermap.org/data/2.5/weather?q=benguela,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: La Rochelle. http://api.openweathermap.org/data/2.5/weather?q=la rochelle,fr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hudson. http://api.openweathermap.org/data/2.5/weather?q=hudson,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chapais. http://api.openweathermap.org/data/2.5/weather?q=chapais,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lively. http://api.openweathermap.org/data/2.5/weather?q=lively,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Middelburg. http://api.openweathermap.org/data/2.5/weather?q=middelburg,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Opuwo. http://api.openweathermap.org/data/2.5/weather?q=opuwo,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tahta. http://api.openweathermap.org/data/2.5/weather?q=tahta,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Harper. http://api.openweathermap.org/data/2.5/weather?q=harper,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Artyom. http://api.openweathermap.org/data/2.5/weather?q=artyom,az&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Asosa. http://api.openweathermap.org/data/2.5/weather?q=asosa,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coquimbo. http://api.openweathermap.org/data/2.5/weather?q=coquimbo,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Brae. http://api.openweathermap.org/data/2.5/weather?q=brae,gb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mutoko. http://api.openweathermap.org/data/2.5/weather?q=mutoko,zw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Semirom. http://api.openweathermap.org/data/2.5/weather?q=semirom,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Berasia. http://api.openweathermap.org/data/2.5/weather?q=berasia,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mandal. http://api.openweathermap.org/data/2.5/weather?q=mandal,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Maceio. http://api.openweathermap.org/data/2.5/weather?q=maceio,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Paamiut. http://api.openweathermap.org/data/2.5/weather?q=paamiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Labytnangi. http://api.openweathermap.org/data/2.5/weather?q=labytnangi,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ostrovskoye. http://api.openweathermap.org/data/2.5/weather?q=ostrovskoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Colorado. http://api.openweathermap.org/data/2.5/weather?q=colorado,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kimberley. http://api.openweathermap.org/data/2.5/weather?q=kimberley,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Geraldton. http://api.openweathermap.org/data/2.5/weather?q=geraldton,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Natal. http://api.openweathermap.org/data/2.5/weather?q=natal,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Najran. http://api.openweathermap.org/data/2.5/weather?q=najran,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chapada dos Guimaraes. http://api.openweathermap.org/data/2.5/weather?q=chapada dos guimaraes,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Guabito. http://api.openweathermap.org/data/2.5/weather?q=guabito,pa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Touros. http://api.openweathermap.org/data/2.5/weather?q=touros,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tazovskiy. http://api.openweathermap.org/data/2.5/weather?q=tazovskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coquimbo. http://api.openweathermap.org/data/2.5/weather?q=coquimbo,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Puerto del Rosario. http://api.openweathermap.org/data/2.5/weather?q=puerto del rosario,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Jose da Coroa Grande. http://api.openweathermap.org/data/2.5/weather?q=sao jose da coroa grande,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pangody. http://api.openweathermap.org/data/2.5/weather?q=pangody,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pangnirtung. http://api.openweathermap.org/data/2.5/weather?q=pangnirtung,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Narasannapeta. http://api.openweathermap.org/data/2.5/weather?q=narasannapeta,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kursavka. http://api.openweathermap.org/data/2.5/weather?q=kursavka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Liverpool. http://api.openweathermap.org/data/2.5/weather?q=liverpool,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Isiolo. http://api.openweathermap.org/data/2.5/weather?q=isiolo,ke&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ancud. http://api.openweathermap.org/data/2.5/weather?q=ancud,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dijkot. http://api.openweathermap.org/data/2.5/weather?q=dijkot,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tarquinia. http://api.openweathermap.org/data/2.5/weather?q=tarquinia,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Zelenoborskiy. http://api.openweathermap.org/data/2.5/weather?q=zelenoborskiy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jacareacanga. http://api.openweathermap.org/data/2.5/weather?q=jacareacanga,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Misratah. http://api.openweathermap.org/data/2.5/weather?q=misratah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Nuuk. http://api.openweathermap.org/data/2.5/weather?q=nuuk,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vawkavysk. http://api.openweathermap.org/data/2.5/weather?q=vawkavysk,by&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ordzhonikidze. http://api.openweathermap.org/data/2.5/weather?q=ordzhonikidze,ua&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bolobo. http://api.openweathermap.org/data/2.5/weather?q=bolobo,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kalaleh. http://api.openweathermap.org/data/2.5/weather?q=kalaleh,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Danilovka. http://api.openweathermap.org/data/2.5/weather?q=danilovka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lyuban. http://api.openweathermap.org/data/2.5/weather?q=lyuban,by&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carauari. http://api.openweathermap.org/data/2.5/weather?q=carauari,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coquimbo. http://api.openweathermap.org/data/2.5/weather?q=coquimbo,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kongoussi. http://api.openweathermap.org/data/2.5/weather?q=kongoussi,bf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Diffa. http://api.openweathermap.org/data/2.5/weather?q=diffa,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rafai. http://api.openweathermap.org/data/2.5/weather?q=rafai,cf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Porto Novo. http://api.openweathermap.org/data/2.5/weather?q=porto novo,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Henties Bay. http://api.openweathermap.org/data/2.5/weather?q=henties bay,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bodrum. http://api.openweathermap.org/data/2.5/weather?q=bodrum,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mangan. http://api.openweathermap.org/data/2.5/weather?q=mangan,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Adeje. http://api.openweathermap.org/data/2.5/weather?q=adeje,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Abonnema. http://api.openweathermap.org/data/2.5/weather?q=abonnema,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port-Cartier. http://api.openweathermap.org/data/2.5/weather?q=port-cartier,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Augustin. http://api.openweathermap.org/data/2.5/weather?q=saint-augustin,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ayagoz. http://api.openweathermap.org/data/2.5/weather?q=ayagoz,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Le Port. http://api.openweathermap.org/data/2.5/weather?q=le port,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Stavern. http://api.openweathermap.org/data/2.5/weather?q=stavern,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Alta Floresta. http://api.openweathermap.org/data/2.5/weather?q=alta floresta,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Zlitan. http://api.openweathermap.org/data/2.5/weather?q=zlitan,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bestobe. http://api.openweathermap.org/data/2.5/weather?q=bestobe,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Iqaluit. http://api.openweathermap.org/data/2.5/weather?q=iqaluit,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Megalopoli. http://api.openweathermap.org/data/2.5/weather?q=megalopoli,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kishi. http://api.openweathermap.org/data/2.5/weather?q=kishi,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Plettenberg Bay. http://api.openweathermap.org/data/2.5/weather?q=plettenberg bay,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Grindavik. http://api.openweathermap.org/data/2.5/weather?q=grindavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Margate. http://api.openweathermap.org/data/2.5/weather?q=margate,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vestmannaeyjar. http://api.openweathermap.org/data/2.5/weather?q=vestmannaeyjar,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dudinka. http://api.openweathermap.org/data/2.5/weather?q=dudinka,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lubao. http://api.openweathermap.org/data/2.5/weather?q=lubao,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sao Filipe. http://api.openweathermap.org/data/2.5/weather?q=sao filipe,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Swidnik. http://api.openweathermap.org/data/2.5/weather?q=swidnik,pl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bud. http://api.openweathermap.org/data/2.5/weather?q=bud,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Necochea. http://api.openweathermap.org/data/2.5/weather?q=necochea,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Maku. http://api.openweathermap.org/data/2.5/weather?q=maku,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Myre. http://api.openweathermap.org/data/2.5/weather?q=myre,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luanda. http://api.openweathermap.org/data/2.5/weather?q=luanda,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bandarbeyla. http://api.openweathermap.org/data/2.5/weather?q=bandarbeyla,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint Lawrence. http://api.openweathermap.org/data/2.5/weather?q=san lawrenz,mt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Joseph. http://api.openweathermap.org/data/2.5/weather?q=saint-joseph,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Altay. http://api.openweathermap.org/data/2.5/weather?q=altay,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lapas. http://api.openweathermap.org/data/2.5/weather?q=lapas,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Podporozhye. http://api.openweathermap.org/data/2.5/weather?q=podporozhye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Elliot. http://api.openweathermap.org/data/2.5/weather?q=elliot,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dabakala. http://api.openweathermap.org/data/2.5/weather?q=dabakala,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint Lawrence. http://api.openweathermap.org/data/2.5/weather?q=san lawrenz,mt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Grande. http://api.openweathermap.org/data/2.5/weather?q=rio grande,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Minsk. http://api.openweathermap.org/data/2.5/weather?q=minsk,by&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Franca do Campo. http://api.openweathermap.org/data/2.5/weather?q=vila franca do campo,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tessalit. http://api.openweathermap.org/data/2.5/weather?q=tessalit,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Belyy Yar. http://api.openweathermap.org/data/2.5/weather?q=belyy yar,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mangan. http://api.openweathermap.org/data/2.5/weather?q=mangan,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port-Gentil. http://api.openweathermap.org/data/2.5/weather?q=port-gentil,ga&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Derzhavinsk. http://api.openweathermap.org/data/2.5/weather?q=derzhavinsk,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Akoupe. http://api.openweathermap.org/data/2.5/weather?q=akoupe,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Naryan-Mar. http://api.openweathermap.org/data/2.5/weather?q=naryan-mar,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Grande. http://api.openweathermap.org/data/2.5/weather?q=rio grande,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saurimo. http://api.openweathermap.org/data/2.5/weather?q=saurimo,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sarakhs. http://api.openweathermap.org/data/2.5/weather?q=sarakhs,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cayenne. http://api.openweathermap.org/data/2.5/weather?q=cayenne,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Luba. http://api.openweathermap.org/data/2.5/weather?q=luba,gq&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Neuquen. http://api.openweathermap.org/data/2.5/weather?q=neuquen,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Beisfjord. http://api.openweathermap.org/data/2.5/weather?q=beisfjord,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Alfred. http://api.openweathermap.org/data/2.5/weather?q=port alfred,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bardiyah. http://api.openweathermap.org/data/2.5/weather?q=bardiyah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upata. http://api.openweathermap.org/data/2.5/weather?q=upata,ve&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Quatre Cocos. http://api.openweathermap.org/data/2.5/weather?q=quatre cocos,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bambous Virieux. http://api.openweathermap.org/data/2.5/weather?q=bambous virieux,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Benguela. http://api.openweathermap.org/data/2.5/weather?q=benguela,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Berlevag. http://api.openweathermap.org/data/2.5/weather?q=berlevag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cascais. http://api.openweathermap.org/data/2.5/weather?q=cascais,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Benguela. http://api.openweathermap.org/data/2.5/weather?q=benguela,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yershov. http://api.openweathermap.org/data/2.5/weather?q=yershov,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nouadhibou. http://api.openweathermap.org/data/2.5/weather?q=nouadhibou,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mazagao. http://api.openweathermap.org/data/2.5/weather?q=mazagao,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rypefjord. http://api.openweathermap.org/data/2.5/weather?q=rypefjord,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Gallegos. http://api.openweathermap.org/data/2.5/weather?q=rio gallegos,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Westport. http://api.openweathermap.org/data/2.5/weather?q=westport,ie&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dekernes. http://api.openweathermap.org/data/2.5/weather?q=dekernes,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pisco. http://api.openweathermap.org/data/2.5/weather?q=pisco,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tevriz. http://api.openweathermap.org/data/2.5/weather?q=tevriz,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Esmeraldas. http://api.openweathermap.org/data/2.5/weather?q=esmeraldas,ec&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Pangoa. http://api.openweathermap.org/data/2.5/weather?q=pangoa,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Caranavi. http://api.openweathermap.org/data/2.5/weather?q=caranavi,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Abu Zabad. http://api.openweathermap.org/data/2.5/weather?q=abu zabad,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lixourion. http://api.openweathermap.org/data/2.5/weather?q=lixourion,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saeby. http://api.openweathermap.org/data/2.5/weather?q=saeby,dk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bolu. http://api.openweathermap.org/data/2.5/weather?q=bolu,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Sinnamary. http://api.openweathermap.org/data/2.5/weather?q=sinnamary,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ajdabiya. http://api.openweathermap.org/data/2.5/weather?q=ajdabiya,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kavaratti. http://api.openweathermap.org/data/2.5/weather?q=kavaratti,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Damaturu. http://api.openweathermap.org/data/2.5/weather?q=damaturu,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Rusape. http://api.openweathermap.org/data/2.5/weather?q=rusape,zw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Denis. http://api.openweathermap.org/data/2.5/weather?q=saint-denis,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Xuddur. http://api.openweathermap.org/data/2.5/weather?q=xuddur,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mogadishu. http://api.openweathermap.org/data/2.5/weather?q=mogadishu,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cervo. http://api.openweathermap.org/data/2.5/weather?q=cervo,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Segovia. http://api.openweathermap.org/data/2.5/weather?q=segovia,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Norilsk. http://api.openweathermap.org/data/2.5/weather?q=norilsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Grand-Santi. http://api.openweathermap.org/data/2.5/weather?q=grand-santi,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Babati. http://api.openweathermap.org/data/2.5/weather?q=babati,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Iraquara. http://api.openweathermap.org/data/2.5/weather?q=iraquara,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Benguela. http://api.openweathermap.org/data/2.5/weather?q=benguela,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Halifax. http://api.openweathermap.org/data/2.5/weather?q=halifax,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Monrovia. http://api.openweathermap.org/data/2.5/weather?q=monrovia,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Paamiut. http://api.openweathermap.org/data/2.5/weather?q=paamiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luba. http://api.openweathermap.org/data/2.5/weather?q=luba,gq&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gravdal. http://api.openweathermap.org/data/2.5/weather?q=gravdal,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Maputo. http://api.openweathermap.org/data/2.5/weather?q=maputo,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ibirama. http://api.openweathermap.org/data/2.5/weather?q=ibirama,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Pierre. http://api.openweathermap.org/data/2.5/weather?q=saint-pierre,pm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dinajpur. http://api.openweathermap.org/data/2.5/weather?q=dinajpur,bd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Akhtubinsk. http://api.openweathermap.org/data/2.5/weather?q=akhtubinsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Grand-Santi. http://api.openweathermap.org/data/2.5/weather?q=grand-santi,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kudahuvadhoo. http://api.openweathermap.org/data/2.5/weather?q=kudahuvadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bukama. http://api.openweathermap.org/data/2.5/weather?q=bukama,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaqortoq. http://api.openweathermap.org/data/2.5/weather?q=qaqortoq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Korla. http://api.openweathermap.org/data/2.5/weather?q=korla,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Inhambane. http://api.openweathermap.org/data/2.5/weather?q=inhambane,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Guhagar. http://api.openweathermap.org/data/2.5/weather?q=guhagar,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Karoi. http://api.openweathermap.org/data/2.5/weather?q=karoi,zw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oristano. http://api.openweathermap.org/data/2.5/weather?q=oristano,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carballo. http://api.openweathermap.org/data/2.5/weather?q=carballo,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bealanana. http://api.openweathermap.org/data/2.5/weather?q=bealanana,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taoudenni. http://api.openweathermap.org/data/2.5/weather?q=taoudenni,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Beloha. http://api.openweathermap.org/data/2.5/weather?q=beloha,mg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yabrud. http://api.openweathermap.org/data/2.5/weather?q=yabrud,sy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hualmay. http://api.openweathermap.org/data/2.5/weather?q=hualmay,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Semey. http://api.openweathermap.org/data/2.5/weather?q=semey,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jawhar. http://api.openweathermap.org/data/2.5/weather?q=jawhar,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaqortoq. http://api.openweathermap.org/data/2.5/weather?q=qaqortoq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hornepayne. http://api.openweathermap.org/data/2.5/weather?q=hornepayne,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mokrous. http://api.openweathermap.org/data/2.5/weather?q=mokrous,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mocuba. http://api.openweathermap.org/data/2.5/weather?q=mocuba,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Anajatuba. http://api.openweathermap.org/data/2.5/weather?q=anajatuba,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Brae. http://api.openweathermap.org/data/2.5/weather?q=brae,gb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tshikapa. http://api.openweathermap.org/data/2.5/weather?q=tshikapa,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kargasok. http://api.openweathermap.org/data/2.5/weather?q=kargasok,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Beisfjord. http://api.openweathermap.org/data/2.5/weather?q=beisfjord,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kalmunai. http://api.openweathermap.org/data/2.5/weather?q=kalmunai,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kavaratti. http://api.openweathermap.org/data/2.5/weather?q=kavaratti,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kavaratti. http://api.openweathermap.org/data/2.5/weather?q=kavaratti,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Soyo. http://api.openweathermap.org/data/2.5/weather?q=soyo,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Charagua. http://api.openweathermap.org/data/2.5/weather?q=charagua,bo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Abha. http://api.openweathermap.org/data/2.5/weather?q=abha,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Natal. http://api.openweathermap.org/data/2.5/weather?q=natal,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vardo. http://api.openweathermap.org/data/2.5/weather?q=vardo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kaspi. http://api.openweathermap.org/data/2.5/weather?q=kaspi,ge&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Constitucion. http://api.openweathermap.org/data/2.5/weather?q=constitucion,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kajaani. http://api.openweathermap.org/data/2.5/weather?q=kajaani,fi&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Talnakh. http://api.openweathermap.org/data/2.5/weather?q=talnakh,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mogadishu. http://api.openweathermap.org/data/2.5/weather?q=mogadishu,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kedgwick. http://api.openweathermap.org/data/2.5/weather?q=kedgwick,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oranjemund. http://api.openweathermap.org/data/2.5/weather?q=oranjemund,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Yining. http://api.openweathermap.org/data/2.5/weather?q=yining,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Suzdal. http://api.openweathermap.org/data/2.5/weather?q=suzdal,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaqortoq. http://api.openweathermap.org/data/2.5/weather?q=qaqortoq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hobyo. http://api.openweathermap.org/data/2.5/weather?q=hobyo,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Maria. http://api.openweathermap.org/data/2.5/weather?q=santa maria,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coihaique. http://api.openweathermap.org/data/2.5/weather?q=coihaique,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cockburn Town. http://api.openweathermap.org/data/2.5/weather?q=cockburn town,bs&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Veraval. http://api.openweathermap.org/data/2.5/weather?q=veraval,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Plettenberg Bay. http://api.openweathermap.org/data/2.5/weather?q=plettenberg bay,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Clyde River. http://api.openweathermap.org/data/2.5/weather?q=clyde river,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Colares. http://api.openweathermap.org/data/2.5/weather?q=colares,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kavaratti. http://api.openweathermap.org/data/2.5/weather?q=kavaratti,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tanout. http://api.openweathermap.org/data/2.5/weather?q=tanout,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Maceio. http://api.openweathermap.org/data/2.5/weather?q=maceio,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vila Velha. http://api.openweathermap.org/data/2.5/weather?q=vila velha,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Santa Luzia. http://api.openweathermap.org/data/2.5/weather?q=santa luzia,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Ambroise. http://api.openweathermap.org/data/2.5/weather?q=saint-ambroise,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Puerto Ayacucho. http://api.openweathermap.org/data/2.5/weather?q=puerto ayacucho,ve&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Robertsport. http://api.openweathermap.org/data/2.5/weather?q=robertsport,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Carutapera. http://api.openweathermap.org/data/2.5/weather?q=carutapera,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kostino. http://api.openweathermap.org/data/2.5/weather?q=kostino,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tshane. http://api.openweathermap.org/data/2.5/weather?q=tshane,bw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Necochea. http://api.openweathermap.org/data/2.5/weather?q=necochea,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ipixuna. http://api.openweathermap.org/data/2.5/weather?q=ipixuna,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Fougamou. http://api.openweathermap.org/data/2.5/weather?q=fougamou,ga&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Rio Gallegos. http://api.openweathermap.org/data/2.5/weather?q=rio gallegos,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Truro. http://api.openweathermap.org/data/2.5/weather?q=truro,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Joseph. http://api.openweathermap.org/data/2.5/weather?q=saint-joseph,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dingle. http://api.openweathermap.org/data/2.5/weather?q=dingle,ie&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Banda Aceh. http://api.openweathermap.org/data/2.5/weather?q=banda aceh,id&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arraial do Cabo. http://api.openweathermap.org/data/2.5/weather?q=arraial do cabo,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Vagamo. http://api.openweathermap.org/data/2.5/weather?q=vagamo,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jumla. http://api.openweathermap.org/data/2.5/weather?q=jumla,np&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ventspils. http://api.openweathermap.org/data/2.5/weather?q=ventspils,lv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bilma. http://api.openweathermap.org/data/2.5/weather?q=bilma,ne&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Abong Mbang. http://api.openweathermap.org/data/2.5/weather?q=abong mbang,cm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Lusambo. http://api.openweathermap.org/data/2.5/weather?q=lusambo,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Okakarara. http://api.openweathermap.org/data/2.5/weather?q=okakarara,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Cristobal. http://api.openweathermap.org/data/2.5/weather?q=san cristobal,ve&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Kitui. http://api.openweathermap.org/data/2.5/weather?q=kitui,ke&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Shache. http://api.openweathermap.org/data/2.5/weather?q=shache,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Namibe. http://api.openweathermap.org/data/2.5/weather?q=namibe,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: The Valley. http://api.openweathermap.org/data/2.5/weather?q=the valley,ai&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Belmonte. http://api.openweathermap.org/data/2.5/weather?q=belmonte,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: East London. http://api.openweathermap.org/data/2.5/weather?q=east london,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Farafenni. http://api.openweathermap.org/data/2.5/weather?q=farafenni,gm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Muhos. http://api.openweathermap.org/data/2.5/weather?q=muhos,fi&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Clyde River. http://api.openweathermap.org/data/2.5/weather?q=clyde river,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cape Town. http://api.openweathermap.org/data/2.5/weather?q=cape town,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Dom Pedrito. http://api.openweathermap.org/data/2.5/weather?q=dom pedrito,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mar del Plata. http://api.openweathermap.org/data/2.5/weather?q=mar del plata,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Coshocton. http://api.openweathermap.org/data/2.5/weather?q=coshocton,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Methoni. http://api.openweathermap.org/data/2.5/weather?q=methoni,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mto wa Mbu. http://api.openweathermap.org/data/2.5/weather?q=mto wa mbu,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Clyde River. http://api.openweathermap.org/data/2.5/weather?q=clyde river,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Mana. http://api.openweathermap.org/data/2.5/weather?q=mana,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Izmir. http://api.openweathermap.org/data/2.5/weather?q=izmir,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Potiskum. http://api.openweathermap.org/data/2.5/weather?q=potiskum,ng&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Arica. http://api.openweathermap.org/data/2.5/weather?q=arica,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Marsh Harbour. http://api.openweathermap.org/data/2.5/weather?q=marsh harbour,bs&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Menongue. http://api.openweathermap.org/data/2.5/weather?q=menongue,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jalu. http://api.openweathermap.org/data/2.5/weather?q=jalu,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Girona. http://api.openweathermap.org/data/2.5/weather?q=girona,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Krasnoborsk. http://api.openweathermap.org/data/2.5/weather?q=krasnoborsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ponta do Sol. http://api.openweathermap.org/data/2.5/weather?q=ponta do sol,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Gujrat. http://api.openweathermap.org/data/2.5/weather?q=gujrat,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Akureyri. http://api.openweathermap.org/data/2.5/weather?q=akureyri,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: The Valley. http://api.openweathermap.org/data/2.5/weather?q=the valley,ai&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jalu. http://api.openweathermap.org/data/2.5/weather?q=jalu,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: San Rafael. http://api.openweathermap.org/data/2.5/weather?q=san rafael,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Ribeira Grande. http://api.openweathermap.org/data/2.5/weather?q=ribeira grande,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Longyearbyen. http://api.openweathermap.org/data/2.5/weather?q=longyearbyen,sj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Feltre. http://api.openweathermap.org/data/2.5/weather?q=feltre,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Krasnyy Kurgan. http://api.openweathermap.org/data/2.5/weather?q=krasnyy kurgan,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Punta Arenas. http://api.openweathermap.org/data/2.5/weather?q=punta arenas,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Clyde River. http://api.openweathermap.org/data/2.5/weather?q=clyde river,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Port Elizabeth. http://api.openweathermap.org/data/2.5/weather?q=port elizabeth,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hwange. http://api.openweathermap.org/data/2.5/weather?q=hwange,zw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Wattegama. http://api.openweathermap.org/data/2.5/weather?q=wattegama,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ngorongoro. http://api.openweathermap.org/data/2.5/weather?q=ngorongoro,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Willowmore. http://api.openweathermap.org/data/2.5/weather?q=willowmore,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mizdah. http://api.openweathermap.org/data/2.5/weather?q=mizdah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Muhos. http://api.openweathermap.org/data/2.5/weather?q=muhos,fi&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: Saint George. http://api.openweathermap.org/data/2.5/weather?q=saint george,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
-    City: La Trinidad. http://api.openweathermap.org/data/2.5/weather?q=la trinidad,ni&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Praia. http://api.openweathermap.org/data/2.5/weather?q=praia,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Trapani. http://api.openweathermap.org/data/2.5/weather?q=trapani,it&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bridlington. http://api.openweathermap.org/data/2.5/weather?q=bridlington,gb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bartica. http://api.openweathermap.org/data/2.5/weather?q=bartica,gy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Maragheh. http://api.openweathermap.org/data/2.5/weather?q=maragheh,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bambey. http://api.openweathermap.org/data/2.5/weather?q=bambey,sn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nanortalik. http://api.openweathermap.org/data/2.5/weather?q=nanortalik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luderitz. http://api.openweathermap.org/data/2.5/weather?q=luderitz,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Shakiso. http://api.openweathermap.org/data/2.5/weather?q=shakiso,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nikolskoye. http://api.openweathermap.org/data/2.5/weather?q=nikolskoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hambantota. http://api.openweathermap.org/data/2.5/weather?q=hambantota,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Matara. http://api.openweathermap.org/data/2.5/weather?q=matara,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Roald. http://api.openweathermap.org/data/2.5/weather?q=roald,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dovolnoye. http://api.openweathermap.org/data/2.5/weather?q=dovolnoye,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Marmarion. http://api.openweathermap.org/data/2.5/weather?q=marmarion,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Turayf. http://api.openweathermap.org/data/2.5/weather?q=turayf,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Borgarnes. http://api.openweathermap.org/data/2.5/weather?q=borgarnes,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yar-Sale. http://api.openweathermap.org/data/2.5/weather?q=yar-sale,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oranjestad. http://api.openweathermap.org/data/2.5/weather?q=oranjestad,aw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Gorom-Gorom. http://api.openweathermap.org/data/2.5/weather?q=gorom-gorom,bf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Shalyhyne. http://api.openweathermap.org/data/2.5/weather?q=shalyhyne,ua&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carutapera. http://api.openweathermap.org/data/2.5/weather?q=carutapera,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nykoping. http://api.openweathermap.org/data/2.5/weather?q=nykoping,se&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Durban. http://api.openweathermap.org/data/2.5/weather?q=durban,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bobcaygeon. http://api.openweathermap.org/data/2.5/weather?q=bobcaygeon,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kapuskasing. http://api.openweathermap.org/data/2.5/weather?q=kapuskasing,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Opuwo. http://api.openweathermap.org/data/2.5/weather?q=opuwo,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bongandanga. http://api.openweathermap.org/data/2.5/weather?q=bongandanga,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ardakan. http://api.openweathermap.org/data/2.5/weather?q=ardakan,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lakshettipet. http://api.openweathermap.org/data/2.5/weather?q=lakshettipet,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Inyonga. http://api.openweathermap.org/data/2.5/weather?q=inyonga,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Beitbridge. http://api.openweathermap.org/data/2.5/weather?q=beitbridge,zw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mamallapuram. http://api.openweathermap.org/data/2.5/weather?q=mamallapuram,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Husavik. http://api.openweathermap.org/data/2.5/weather?q=husavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Augustin. http://api.openweathermap.org/data/2.5/weather?q=saint-augustin,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Malanje. http://api.openweathermap.org/data/2.5/weather?q=malanje,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Itarema. http://api.openweathermap.org/data/2.5/weather?q=itarema,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hithadhoo. http://api.openweathermap.org/data/2.5/weather?q=hithadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Koulikoro. http://api.openweathermap.org/data/2.5/weather?q=koulikoro,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lokosovo. http://api.openweathermap.org/data/2.5/weather?q=lokosovo,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tabas. http://api.openweathermap.org/data/2.5/weather?q=tabas,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kalmunai. http://api.openweathermap.org/data/2.5/weather?q=kalmunai,lk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Impfondo. http://api.openweathermap.org/data/2.5/weather?q=impfondo,cg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Benghazi. http://api.openweathermap.org/data/2.5/weather?q=benghazi,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Castro. http://api.openweathermap.org/data/2.5/weather?q=castro,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sayat. http://api.openweathermap.org/data/2.5/weather?q=sayat,tm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Awjilah. http://api.openweathermap.org/data/2.5/weather?q=awjilah,ly&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Havre-Saint-Pierre. http://api.openweathermap.org/data/2.5/weather?q=havre-saint-pierre,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yazd. http://api.openweathermap.org/data/2.5/weather?q=yazd,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Permet. http://api.openweathermap.org/data/2.5/weather?q=permet,al&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chapais. http://api.openweathermap.org/data/2.5/weather?q=chapais,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Harper. http://api.openweathermap.org/data/2.5/weather?q=harper,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Camacha. http://api.openweathermap.org/data/2.5/weather?q=camacha,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ulundi. http://api.openweathermap.org/data/2.5/weather?q=ulundi,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pangnirtung. http://api.openweathermap.org/data/2.5/weather?q=pangnirtung,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mantes-la-Jolie. http://api.openweathermap.org/data/2.5/weather?q=mantes-la-jolie,fr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Shahrud. http://api.openweathermap.org/data/2.5/weather?q=shahrud,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Huarmey. http://api.openweathermap.org/data/2.5/weather?q=huarmey,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nantucket. http://api.openweathermap.org/data/2.5/weather?q=nantucket,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Putina. http://api.openweathermap.org/data/2.5/weather?q=putina,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hofn. http://api.openweathermap.org/data/2.5/weather?q=hofn,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dingle. http://api.openweathermap.org/data/2.5/weather?q=dingle,ie&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Boende. http://api.openweathermap.org/data/2.5/weather?q=boende,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tarancon. http://api.openweathermap.org/data/2.5/weather?q=tarancon,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kalangala. http://api.openweathermap.org/data/2.5/weather?q=kalangala,ug&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kayerkan. http://api.openweathermap.org/data/2.5/weather?q=kayerkan,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Avallon. http://api.openweathermap.org/data/2.5/weather?q=avallon,fr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mecca. http://api.openweathermap.org/data/2.5/weather?q=mecca,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Broceni. http://api.openweathermap.org/data/2.5/weather?q=broceni,lv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Souillac. http://api.openweathermap.org/data/2.5/weather?q=souillac,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Catio. http://api.openweathermap.org/data/2.5/weather?q=catio,gw&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Yaviza. http://api.openweathermap.org/data/2.5/weather?q=yaviza,pa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bhuj. http://api.openweathermap.org/data/2.5/weather?q=bhuj,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qasigiannguit. http://api.openweathermap.org/data/2.5/weather?q=qasigiannguit,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Suez. http://api.openweathermap.org/data/2.5/weather?q=suez,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Eyl. http://api.openweathermap.org/data/2.5/weather?q=eyl,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Rawson. http://api.openweathermap.org/data/2.5/weather?q=rawson,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Itarema. http://api.openweathermap.org/data/2.5/weather?q=itarema,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Novokuznetsk. http://api.openweathermap.org/data/2.5/weather?q=novokuznetsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chuy. http://api.openweathermap.org/data/2.5/weather?q=chuy,uy&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salekhard. http://api.openweathermap.org/data/2.5/weather?q=salekhard,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Paita. http://api.openweathermap.org/data/2.5/weather?q=paita,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Buchanan. http://api.openweathermap.org/data/2.5/weather?q=buchanan,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cidreira. http://api.openweathermap.org/data/2.5/weather?q=cidreira,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kabalo. http://api.openweathermap.org/data/2.5/weather?q=kabalo,cd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aswan. http://api.openweathermap.org/data/2.5/weather?q=aswan,eg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Maceio. http://api.openweathermap.org/data/2.5/weather?q=maceio,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Geraldton. http://api.openweathermap.org/data/2.5/weather?q=geraldton,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tabuk. http://api.openweathermap.org/data/2.5/weather?q=tabuk,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mumford. http://api.openweathermap.org/data/2.5/weather?q=mumford,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ziniare. http://api.openweathermap.org/data/2.5/weather?q=ziniare,bf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Havelock. http://api.openweathermap.org/data/2.5/weather?q=havelock,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Paamiut. http://api.openweathermap.org/data/2.5/weather?q=paamiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mohgaon. http://api.openweathermap.org/data/2.5/weather?q=mohgaon,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Husavik. http://api.openweathermap.org/data/2.5/weather?q=husavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Selb. http://api.openweathermap.org/data/2.5/weather?q=selb,de&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Krasnogvardeyets. http://api.openweathermap.org/data/2.5/weather?q=krasnogvardeyets,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Trairi. http://api.openweathermap.org/data/2.5/weather?q=trairi,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Waldshut-Tiengen. http://api.openweathermap.org/data/2.5/weather?q=waldshut-tiengen,de&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hamilton. http://api.openweathermap.org/data/2.5/weather?q=hamilton,bm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Klaksvik. http://api.openweathermap.org/data/2.5/weather?q=klaksvik,fo&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Polyarnyy. http://api.openweathermap.org/data/2.5/weather?q=polyarnyy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mitu. http://api.openweathermap.org/data/2.5/weather?q=mitu,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Luanda. http://api.openweathermap.org/data/2.5/weather?q=luanda,ao&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushtobe. http://api.openweathermap.org/data/2.5/weather?q=ushtobe,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chapais. http://api.openweathermap.org/data/2.5/weather?q=chapais,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mayumba. http://api.openweathermap.org/data/2.5/weather?q=mayumba,ga&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Semey. http://api.openweathermap.org/data/2.5/weather?q=semey,kz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Micheweni. http://api.openweathermap.org/data/2.5/weather?q=micheweni,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Atar. http://api.openweathermap.org/data/2.5/weather?q=atar,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oistins. http://api.openweathermap.org/data/2.5/weather?q=oistins,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Susehri. http://api.openweathermap.org/data/2.5/weather?q=susehri,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pedernales. http://api.openweathermap.org/data/2.5/weather?q=pedernales,do&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hendek. http://api.openweathermap.org/data/2.5/weather?q=hendek,tr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Planadas. http://api.openweathermap.org/data/2.5/weather?q=planadas,co&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ashta. http://api.openweathermap.org/data/2.5/weather?q=ashta,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Uruacu. http://api.openweathermap.org/data/2.5/weather?q=uruacu,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ferrol. http://api.openweathermap.org/data/2.5/weather?q=ferrol,es&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sharjah. http://api.openweathermap.org/data/2.5/weather?q=sharjah,ae&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aksu. http://api.openweathermap.org/data/2.5/weather?q=aksu,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Geraldton. http://api.openweathermap.org/data/2.5/weather?q=geraldton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Carnarvon. http://api.openweathermap.org/data/2.5/weather?q=carnarvon,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Caravelas. http://api.openweathermap.org/data/2.5/weather?q=caravelas,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ntungamo. http://api.openweathermap.org/data/2.5/weather?q=ntungamo,ug&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dikson. http://api.openweathermap.org/data/2.5/weather?q=dikson,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Methoni. http://api.openweathermap.org/data/2.5/weather?q=methoni,gr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saldanha. http://api.openweathermap.org/data/2.5/weather?q=saldanha,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Caraguatay. http://api.openweathermap.org/data/2.5/weather?q=caraguatay,py&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Muisne. http://api.openweathermap.org/data/2.5/weather?q=muisne,ec&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Camacha. http://api.openweathermap.org/data/2.5/weather?q=camacha,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sur. http://api.openweathermap.org/data/2.5/weather?q=sur,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Onega. http://api.openweathermap.org/data/2.5/weather?q=onega,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Boddam. http://api.openweathermap.org/data/2.5/weather?q=boddam,gb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Camacha. http://api.openweathermap.org/data/2.5/weather?q=camacha,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bezhetsk. http://api.openweathermap.org/data/2.5/weather?q=bezhetsk,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Monrovia. http://api.openweathermap.org/data/2.5/weather?q=monrovia,lr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jaisalmer. http://api.openweathermap.org/data/2.5/weather?q=jaisalmer,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Eidsvag. http://api.openweathermap.org/data/2.5/weather?q=eidsvag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sawakin. http://api.openweathermap.org/data/2.5/weather?q=sawakin,sd&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Islamkot. http://api.openweathermap.org/data/2.5/weather?q=islamkot,pk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Brigantine. http://api.openweathermap.org/data/2.5/weather?q=brigantine,us&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Geraldton. http://api.openweathermap.org/data/2.5/weather?q=geraldton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Nouakchott. http://api.openweathermap.org/data/2.5/weather?q=nouakchott,mr&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salinopolis. http://api.openweathermap.org/data/2.5/weather?q=salinopolis,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tabou. http://api.openweathermap.org/data/2.5/weather?q=tabou,ci&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mahebourg. http://api.openweathermap.org/data/2.5/weather?q=mahebourg,mu&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mehamn. http://api.openweathermap.org/data/2.5/weather?q=mehamn,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Stornoway. http://api.openweathermap.org/data/2.5/weather?q=stornoway,gb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Garowe. http://api.openweathermap.org/data/2.5/weather?q=garowe,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Taoudenni. http://api.openweathermap.org/data/2.5/weather?q=taoudenni,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jaisalmer. http://api.openweathermap.org/data/2.5/weather?q=jaisalmer,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sorland. http://api.openweathermap.org/data/2.5/weather?q=sorland,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Araouane. http://api.openweathermap.org/data/2.5/weather?q=araouane,ml&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Cayenne. http://api.openweathermap.org/data/2.5/weather?q=cayenne,gf&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Urucara. http://api.openweathermap.org/data/2.5/weather?q=urucara,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bathsheba. http://api.openweathermap.org/data/2.5/weather?q=bathsheba,bb&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lebu. http://api.openweathermap.org/data/2.5/weather?q=lebu,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Karpogory. http://api.openweathermap.org/data/2.5/weather?q=karpogory,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Havoysund. http://api.openweathermap.org/data/2.5/weather?q=havoysund,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ilulissat. http://api.openweathermap.org/data/2.5/weather?q=ilulissat,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hunucma. http://api.openweathermap.org/data/2.5/weather?q=hunucma,mx&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pendra. http://api.openweathermap.org/data/2.5/weather?q=pendra,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salinopolis. http://api.openweathermap.org/data/2.5/weather?q=salinopolis,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Georgetown. http://api.openweathermap.org/data/2.5/weather?q=georgetown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Brattvag. http://api.openweathermap.org/data/2.5/weather?q=brattvag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Shiraz. http://api.openweathermap.org/data/2.5/weather?q=shiraz,ir&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Victoria. http://api.openweathermap.org/data/2.5/weather?q=victoria,sc&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Purpe. http://api.openweathermap.org/data/2.5/weather?q=purpe,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Sisimiut. http://api.openweathermap.org/data/2.5/weather?q=sisimiut,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mogwase. http://api.openweathermap.org/data/2.5/weather?q=mogwase,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Saint-Philippe. http://api.openweathermap.org/data/2.5/weather?q=saint-philippe,re&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Inhambane. http://api.openweathermap.org/data/2.5/weather?q=inhambane,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Oranjemund. http://api.openweathermap.org/data/2.5/weather?q=oranjemund,na&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Upernavik. http://api.openweathermap.org/data/2.5/weather?q=upernavik,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Katakwi. http://api.openweathermap.org/data/2.5/weather?q=katakwi,ug&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qaanaaq. http://api.openweathermap.org/data/2.5/weather?q=qaanaaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bridgetown. http://api.openweathermap.org/data/2.5/weather?q=bridgetown,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Amvrosiyivka. http://api.openweathermap.org/data/2.5/weather?q=amvrosiyivka,ua&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Torbay. http://api.openweathermap.org/data/2.5/weather?q=torbay,ca&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kautokeino. http://api.openweathermap.org/data/2.5/weather?q=kautokeino,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kemin. http://api.openweathermap.org/data/2.5/weather?q=kemin,kg&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tasiilaq. http://api.openweathermap.org/data/2.5/weather?q=tasiilaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mitsamiouli. http://api.openweathermap.org/data/2.5/weather?q=mitsamiouli,km&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mpanda. http://api.openweathermap.org/data/2.5/weather?q=mpanda,tz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bredasdorp. http://api.openweathermap.org/data/2.5/weather?q=bredasdorp,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kochi. http://api.openweathermap.org/data/2.5/weather?q=kochi,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Necochea. http://api.openweathermap.org/data/2.5/weather?q=necochea,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Talara. http://api.openweathermap.org/data/2.5/weather?q=talara,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Camocim. http://api.openweathermap.org/data/2.5/weather?q=camocim,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Honningsvag. http://api.openweathermap.org/data/2.5/weather?q=honningsvag,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Floro. http://api.openweathermap.org/data/2.5/weather?q=floro,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Salalah. http://api.openweathermap.org/data/2.5/weather?q=salalah,om&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Goba. http://api.openweathermap.org/data/2.5/weather?q=goba,et&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pudozh. http://api.openweathermap.org/data/2.5/weather?q=pudozh,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Puri. http://api.openweathermap.org/data/2.5/weather?q=puri,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Mercedes. http://api.openweathermap.org/data/2.5/weather?q=mercedes,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aksu. http://api.openweathermap.org/data/2.5/weather?q=aksu,cn&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tignere. http://api.openweathermap.org/data/2.5/weather?q=tignere,cm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Jamestown. http://api.openweathermap.org/data/2.5/weather?q=jamestown,sh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ouidah. http://api.openweathermap.org/data/2.5/weather?q=ouidah,bj&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kathmandu. http://api.openweathermap.org/data/2.5/weather?q=kathmandu,np&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Manica. http://api.openweathermap.org/data/2.5/weather?q=manica,mz&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dhidhdhoo. http://api.openweathermap.org/data/2.5/weather?q=dhidhdhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Colesberg. http://api.openweathermap.org/data/2.5/weather?q=colesberg,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Narsaq. http://api.openweathermap.org/data/2.5/weather?q=narsaq,gl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ostrovnoy. http://api.openweathermap.org/data/2.5/weather?q=ostrovnoy,ru&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Takoradi. http://api.openweathermap.org/data/2.5/weather?q=takoradi,gh&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Vicuna. http://api.openweathermap.org/data/2.5/weather?q=vicuna,cl&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Busselton. http://api.openweathermap.org/data/2.5/weather?q=busselton,au&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Roald. http://api.openweathermap.org/data/2.5/weather?q=roald,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Bandarbeyla. http://api.openweathermap.org/data/2.5/weather?q=bandarbeyla,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Qandala. http://api.openweathermap.org/data/2.5/weather?q=qandala,so&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Lagoa. http://api.openweathermap.org/data/2.5/weather?q=lagoa,pt&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Abha. http://api.openweathermap.org/data/2.5/weather?q=abha,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Aripuana. http://api.openweathermap.org/data/2.5/weather?q=aripuana,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Dasoguz. http://api.openweathermap.org/data/2.5/weather?q=dasoguz,tm&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Buraydah. http://api.openweathermap.org/data/2.5/weather?q=buraydah,sa&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kulhudhuffushi. http://api.openweathermap.org/data/2.5/weather?q=kulhudhuffushi,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kudahuvadhoo. http://api.openweathermap.org/data/2.5/weather?q=kudahuvadhoo,mv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Asnaes. http://api.openweathermap.org/data/2.5/weather?q=asnaes,dk&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Pitimbu. http://api.openweathermap.org/data/2.5/weather?q=pitimbu,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Hermanus. http://api.openweathermap.org/data/2.5/weather?q=hermanus,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Zorritos. http://api.openweathermap.org/data/2.5/weather?q=zorritos,pe&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Husavik. http://api.openweathermap.org/data/2.5/weather?q=husavik,is&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Kruisfontein. http://api.openweathermap.org/data/2.5/weather?q=kruisfontein,za&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Neuquen. http://api.openweathermap.org/data/2.5/weather?q=neuquen,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Touros. http://api.openweathermap.org/data/2.5/weather?q=touros,br&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Tarrafal. http://api.openweathermap.org/data/2.5/weather?q=tarrafal,cv&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Ushuaia. http://api.openweathermap.org/data/2.5/weather?q=ushuaia,ar&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Chatra. http://api.openweathermap.org/data/2.5/weather?q=chatra,in&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
+    City: Skjervoy. http://api.openweathermap.org/data/2.5/weather?q=skjervoy,no&units=imperial&APPID=067896fd7e9a52cfebc9a42c4b82e6c2
     
 
 
@@ -1361,68 +1317,68 @@ df.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>atar</td>
-      <td>mr</td>
-      <td>19.17</td>
-      <td>-13.27</td>
-      <td>20.52</td>
-      <td>-13.05</td>
-      <td>74.15</td>
-      <td>38</td>
-      <td>8</td>
-      <td>2.59</td>
+      <td>colombo</td>
+      <td>lk</td>
+      <td>6.75</td>
+      <td>78.63</td>
+      <td>6.93</td>
+      <td>79.85</td>
+      <td>77</td>
+      <td>94</td>
+      <td>40</td>
+      <td>5.82</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>santa isabel do rio negro</td>
-      <td>br</td>
-      <td>1.93</td>
-      <td>-65.3</td>
-      <td>-0.41</td>
-      <td>-65.02</td>
-      <td>76.94</td>
-      <td>91</td>
-      <td>80</td>
-      <td>3.04</td>
+      <td>lagoa</td>
+      <td>pt</td>
+      <td>44.99</td>
+      <td>-27.55</td>
+      <td>37.14</td>
+      <td>-8.45</td>
+      <td>71.6</td>
+      <td>68</td>
+      <td>0</td>
+      <td>9.17</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>mar del plata</td>
-      <td>ar</td>
-      <td>-52.52</td>
-      <td>-46.77</td>
-      <td>-46.43</td>
-      <td>-67.52</td>
-      <td>49.76</td>
-      <td>69</td>
-      <td>8</td>
-      <td>11.43</td>
+      <td>cidreira</td>
+      <td>br</td>
+      <td>-58.55</td>
+      <td>-21.64</td>
+      <td>-30.17</td>
+      <td>-50.22</td>
+      <td>46.39</td>
+      <td>82</td>
+      <td>0</td>
+      <td>2.77</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>galle</td>
-      <td>lk</td>
-      <td>4.52</td>
-      <td>77.85</td>
-      <td>6.04</td>
-      <td>80.22</td>
-      <td>75.59</td>
-      <td>100</td>
-      <td>92</td>
-      <td>12.21</td>
+      <td>kikwit</td>
+      <td>cd</td>
+      <td>-6.28</td>
+      <td>18.74</td>
+      <td>-5.04</td>
+      <td>18.82</td>
+      <td>64.93</td>
+      <td>90</td>
+      <td>0</td>
+      <td>4.68</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>guadalajara</td>
-      <td>es</td>
-      <td>41.18</td>
-      <td>-3.26</td>
-      <td>40.63</td>
-      <td>-3.16</td>
-      <td>69.84</td>
-      <td>45</td>
-      <td>0</td>
-      <td>12.75</td>
+      <td>bilma</td>
+      <td>ne</td>
+      <td>20.13</td>
+      <td>10.25</td>
+      <td>18.69</td>
+      <td>12.92</td>
+      <td>82.3</td>
+      <td>19</td>
+      <td>76</td>
+      <td>5.68</td>
     </tr>
   </tbody>
 </table>
@@ -1432,7 +1388,7 @@ df.head()
 
 
 ```python
-# df.to_csv("WeatherPy.csv", encoding="utf-8", index=False)
+df.to_csv("WeatherPy.csv", encoding="utf-8", index=False)
 ```
 
 
@@ -1442,18 +1398,11 @@ plt.xlabel("Latitude")
 plt.ylabel("Temperature (F)")
 plt.title("Temperature (F) vs. Latitude at 6/19/18")
 
-# plt.savefig("LatvsTemp.png")
+plt.savefig("LatvsTemp.png")
 ```
 
 
-
-
-    Text(0.5,1,'Temperature (F) vs. Latitude at 6/19/18')
-
-
-
-
-![png](output_10_1.png)
+![png](output_10_0.png)
 
 
 
@@ -1463,18 +1412,11 @@ plt.xlabel("Latitude")
 plt.ylabel("Humidity (%)")
 plt.title("Humidity (%) vs. Latitude at 6/19/18")
 
-# plt.savefig("LatvsHumidity.png")
+plt.savefig("LatvsHumidity.png")
 ```
 
 
-
-
-    Text(0.5,1,'Humidity (%) vs. Latitude at 6/19/18')
-
-
-
-
-![png](output_11_1.png)
+![png](output_11_0.png)
 
 
 
@@ -1484,18 +1426,11 @@ plt.xlabel("Latitude")
 plt.ylabel("Cloudiness (%)")
 plt.title("Cloudiness (%) vs. Latitude at 6/19/18")
 
-# plt.savefig("LatvsCloudiness.png")
+plt.savefig("LatvsCloudiness.png")
 ```
 
 
-
-
-    Text(0.5,1,'Cloudiness (%) vs. Latitude at 6/19/18')
-
-
-
-
-![png](output_12_1.png)
+![png](output_12_0.png)
 
 
 
@@ -1505,16 +1440,9 @@ plt.xlabel("Latitude")
 plt.ylabel("Wind Speed (mph)")
 plt.title("Wind Speed (mph) vs. Latitude at 6/19/18")
 
-# plt.savefig("LatvsWind.png")
+plt.savefig("LatvsWind.png")
 ```
 
 
-
-
-    Text(0.5,1,'Wind Speed (mph) vs. Latitude at 6/19/18')
-
-
-
-
-![png](output_13_1.png)
+![png](output_13_0.png)
 
