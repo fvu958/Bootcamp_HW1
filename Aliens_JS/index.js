@@ -4,7 +4,7 @@ var $searchBtn = document.querySelector('#search');
 
 $searchBtn.addEventListener('click', handleSearchButtonClick);
 
-var filteredReports = addressData;
+var filteredReports = dataSet;
 
 function renderTable() {
   $tbody.innerHTML = '';
@@ -23,7 +23,7 @@ function renderTable() {
 function handleSearchButtonClick() {
   var filterState = $dateInput.value.trim().toLowerCase();
 
-  filteredReports = addressData.filter(function(report) {
+  filteredReports = dataSet.filter(function(report) {
     var addressState = report.datetime;
 
     return addressState === filterState;
